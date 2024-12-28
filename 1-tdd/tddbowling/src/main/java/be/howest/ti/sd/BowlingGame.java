@@ -2,13 +2,22 @@ package be.howest.ti.sd;
 
 public class BowlingGame {
 
+    private final int MAX_FRAMES = 10;
     private final int TOTAL_PINS = 10;
     private int pinsUp = TOTAL_PINS;
     private int currentFrame = 1;
+    private GameStatus gameStatus = GameStatus.NOT_STARTED;
     private int currentFrameRolls = 0;
 
     public int getPinsUp() {
         return pinsUp;
+    }
+    public int getCurrentFrame() {
+        return currentFrame;
+    }
+
+    public GameStatus getGameStatus() {
+        return gameStatus;
     }
 
     public void roll(int pinsToKnockDown) {
@@ -29,15 +38,18 @@ public class BowlingGame {
         return TOTAL_PINS - pinsUp;
     }
 
-    public int getCurrentFrame() {
-        return currentFrame;
-    }
-
     private void updateFrame() {
         currentFrameRolls++;
+
         if (currentFrameRolls == 2) {
             currentFrame++;
             currentFrameRolls = 0;
+        }
+
+        if (currentFrame > MAX_FRAMES) {
+            gameStatus = GameStatus.FINISHED;
+        } else {
+            gameStatus = GameStatus.IN_PROGRESS;
         }
     }
 

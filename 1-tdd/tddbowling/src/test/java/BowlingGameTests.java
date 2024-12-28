@@ -1,4 +1,5 @@
 import be.howest.ti.sd.BowlingGame;
+import be.howest.ti.sd.GameStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -84,7 +85,7 @@ public class BowlingGameTests {
     @Test
     public void rollingTwentyTimes_EndsGame() {
         int numberOfRolls = 20;
-        int expectedGameStatus = GameStatus.FINISHED;
+        GameStatus expectedGameStatus = GameStatus.FINISHED;
 
         for (int i = 0; i < numberOfRolls; i++) {
             bowlingGame.roll(0);
