@@ -15,4 +15,17 @@ public class BowlingGameTests {
         //assert
         assertEquals(expectedPins, actualPins);
     }
+
+    @Test
+    public void knockingDownOnePin_DecreasesPinsByOne() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int expectedPins = 9;
+
+        bowlingGame.roll(1);
+        int actualPins = bowlingGame.getPins();
+
+        assertEquals(expectedPins, actualPins);
+    }
+
+
 }
