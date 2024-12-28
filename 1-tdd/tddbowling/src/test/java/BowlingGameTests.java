@@ -10,7 +10,7 @@ public class BowlingGameTests {
         int expectedPins = 10;
 
         //act
-        int actualPins = bowlingGame.getPins();
+        int actualPins = bowlingGame.getPinsUp();
 
         //assert
         assertEquals(expectedPins, actualPins);
@@ -22,9 +22,9 @@ public class BowlingGameTests {
         int expectedPins = 9;
 
         bowlingGame.roll(1);
-        int actualPins = bowlingGame.getPins();
+        int actualPins = bowlingGame.getPinsUp();
 
         assertEquals(expectedPins, actualPins);
     }
-    
+
 }

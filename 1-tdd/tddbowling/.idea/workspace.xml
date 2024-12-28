@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee9b381c-c434-405e-946b-8e299dc01321" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/1-tdd/tddbowling/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/1-tdd/tddbowling/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BowlingGameTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BowlingGameTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="ee9b381c-c434-405e-946b-8e299dc01321" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,12 +23,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2qq1bgbVFGR5jOV1OFQd7GEGH0J" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -47,14 +44,16 @@
     "Gradle.BowlingGameTests.nothing.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "<unknown>",
+    "git-widget-placeholder": "assignment/tdd",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/bati/S3/Software Design/gitlab-profile",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "D:/bati/S3/Software Design/gitlab-profile/1-tdd/tddbowling/src/main/java/be/howest/ti/sd/Main.java",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -147,7 +146,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735375369893</updated>
-      <workItem from="1735375370961" duration="2643000" />
+      <workItem from="1735375370961" duration="2872000" />
+      <workItem from="1735379158859" duration="458000" />
     </task>
     <servers />
   </component>

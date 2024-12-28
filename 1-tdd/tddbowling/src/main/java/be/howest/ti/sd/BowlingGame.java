@@ -2,12 +2,13 @@ package be.howest.ti.sd;
 
 public class BowlingGame {
 
-    private int pins = 10;
-    public int getPins() {
-        return pins;
+    private final int TOTAL_PINS = 10;
+    private int pinsUp = TOTAL_PINS;
+    public int getPinsUp() {
+        return pinsUp;
     }
 
     public void roll(int pinsToKnockDown) {
-        pins -= pinsToKnockDown;
+        pinsUp -= pinsToKnockDown;
     }
 }
