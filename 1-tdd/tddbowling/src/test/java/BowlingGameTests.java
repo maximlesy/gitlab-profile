@@ -29,6 +29,18 @@ public class BowlingGameTests {
     }
 
     @Test
+    public void initialisingGame_StartsOnFrameOne() {
+        //arrange
+        int expectedFrame = 1;
+
+        //act
+        int actualFrame = bowlingGame.getFrame();
+
+        //assert
+        assertEquals(expectedFrame, actualFrame);
+    }
+
+    @Test
     public void knockingDownOnePin_DecreasesPinsByOne() {
         int expectedPins = 9;
         int pinsKnockedDown = 1;
