@@ -117,7 +117,7 @@ public class BowlingGameTests {
     }
 
     @Test
-    public void ThrowingMultipleStrikesInARow_MovesMultipleFrames() {
+    public void throwingMultipleStrikesInARow_MovesMultipleFrames() {
         int expectedFrame = 4;
 
         bowlingGame.roll(10);
