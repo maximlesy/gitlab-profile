@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee9b381c-c434-405e-946b-8e299dc01321" name="Changes" comment="" />
+    <list default="true" id="ee9b381c-c434-405e-946b-8e299dc01321" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/howest/ti/sd/BowlingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/howest/ti/sd/BowlingGame.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +32,9 @@
   "associatedIndex": 3
 }]]></component>
   <component name="ProjectId" id="2qq1bgbVFGR5jOV1OFQd7GEGH0J" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,7 +56,31 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.BowlingGameTests.initialisingGame_StartsWithTenPinsUp">
+  <component name="RunManager" selected="Gradle.BowlingGameTests">
+    <configuration name="BowlingGameTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;BowlingGameTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="BowlingGameTests.initialisingGame_StartsWithTenPinsUp" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -103,6 +131,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BowlingGameTests" />
         <item itemvalue="Gradle.BowlingGameTests.initialisingGame_StartsWithTenPinsUp" />
         <item itemvalue="Gradle.BowlingGameTests.nothing" />
       </list>
@@ -116,7 +145,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735375369893</updated>
-      <workItem from="1735375370961" duration="2108000" />
+      <workItem from="1735375370961" duration="2249000" />
     </task>
     <servers />
   </component>
