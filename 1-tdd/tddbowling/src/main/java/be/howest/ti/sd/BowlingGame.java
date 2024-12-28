@@ -22,6 +22,10 @@ public class BowlingGame {
 
     public void roll(int pinsToKnockDown) {
 
+        if (gameStatus == GameStatus.FINISHED) {
+            throw new RollException("Game is already finished");
+        }
+
         if (pinsToKnockDown > pinsUp) {
             throw new RollException("Cannot knock down more pins than there are up");
         }
