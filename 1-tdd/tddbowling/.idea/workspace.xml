@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee9b381c-c434-405e-946b-8e299dc01321" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-    </list>
+    <list default="true" id="ee9b381c-c434-405e-946b-8e299dc01321" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +56,7 @@
     "Gradle.BowlingGameTests.knockingDownPins_ReturnsCorrectScore.executor": "Run",
     "Gradle.BowlingGameTests.knockingDownTooManyPins_ThrowsRollException.executor": "Run",
     "Gradle.BowlingGameTests.nothing.executor": "Run",
+    "Gradle.BowlingGameTests.rollingWhenGameHasEnded_ThrowsRollException.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -173,7 +172,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="BowlingGameTests.nothing" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BowlingGameTests.rollingWhenGameHasEnded_ThrowsRollException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -186,7 +185,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;BowlingGameTests.nothing&quot;" />
+            <option value="&quot;BowlingGameTests.rollingWhenGameHasEnded_ThrowsRollException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -200,10 +199,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.BowlingGameTests" />
+        <item itemvalue="Gradle.BowlingGameTests.rollingWhenGameHasEnded_ThrowsRollException" />
         <item itemvalue="Gradle.BowlingGameTests.knockingDownTooManyPins_ThrowsRollException" />
         <item itemvalue="Gradle.BowlingGameTests.knockingDownPins_ReturnsCorrectScore" />
         <item itemvalue="Gradle.BowlingGameTests.initialisingGame_StartsWithTenPinsUp" />
-        <item itemvalue="Gradle.BowlingGameTests.nothing" />
       </list>
     </recent_temporary>
   </component>
@@ -222,5 +221,19 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/BowlingGameTests.java</url>
+          <line>104</line>
+          <properties>
+            <option name="lambda-ordinal" value="0" />
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

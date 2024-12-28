@@ -14,12 +14,18 @@ public class Frame {
     }
 
     public void addRoll(int pinsKnockedDown) {
-
         if(rolls.size() < Settings.ROLLS_PER_FRAME) {
             rolls.add(pinsKnockedDown);
         }
     }
     public List<Integer> getRolls() {
         return rolls;
+    }
+    public boolean wasStrike() {
+        return rolls.contains(Settings.TOTAL_PINS);
+    }
+
+    public int getScore() {
+        return rolls.stream().reduce(0, Integer::sum);
     }
 }

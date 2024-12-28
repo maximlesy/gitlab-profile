@@ -30,9 +30,9 @@ public class BowlingGameTests {
     }
 
     @Test
-    public void initialisingGame_StartsOnFrameOne() {
+    public void initialisingGame_StartsOnFrameZero() {
         //arrange
-        int expectedFrame = 1;
+        int expectedFrame = 0;
 
         //act
         int actualFrame = bowlingGame.getCurrentFrame();
@@ -72,7 +72,7 @@ public class BowlingGameTests {
     }
 
     @ParameterizedTest
-    @CsvSource({"1,1", "2,2", "3,2", "4,3", "5,3", "6,4", "7,4"})
+    @CsvSource({"1,0", "2,1", "3,1", "4,2", "5,2", "6,3", "7,3"})
     public void whenRollingMoreThanTwice_GameMovesToNextFrame(int numberOfRolls, int expectedFrame) {
 
         for (int i = 0; i < numberOfRolls; i++) {
@@ -108,7 +108,7 @@ public class BowlingGameTests {
     @Test
     public void knockingDownTenPinsOnFirstRoll_ImmediatelyMovesToNextFrame() {
         int pinsKnockedDown = 10;
-        int expectedFrame = 2;
+        int expectedFrame = 1;
 
         bowlingGame.roll(pinsKnockedDown);
         int actualFrame = bowlingGame.getCurrentFrame();
@@ -118,7 +118,7 @@ public class BowlingGameTests {
 
     @Test
     public void throwingMultipleStrikesInARow_MovesMultipleFrames() {
-        int expectedFrame = 4;
+        int expectedFrame = 3;
 
         bowlingGame.roll(10);
         bowlingGame.roll(10);

@@ -8,7 +8,7 @@ public class BowlingGame {
     private List<Frame> frames;
 
     public BowlingGame() {
-        this.currentFrame = 1;
+        this.currentFrame = 0;
         this.pinsUp = Settings.TOTAL_PINS;
         this.gameStatus = GameStatus.IN_PROGRESS;
         this.frames = new ArrayList<>();
@@ -25,9 +25,8 @@ public class BowlingGame {
         return currentFrame;
     }
     public Frame getActiveFrame() {
-        return frames.get(currentFrame - 1);
+        return frames.get(currentFrame);
     }
-
     public GameStatus getGameStatus() {
         return gameStatus;
     }
@@ -40,10 +39,18 @@ public class BowlingGame {
 
     public int score() {
         int totalScore = 0;
-        for (int i = 0; i < frames.size(); i++) {
-            Frame frame = frames.get(i);
-            for(int j = 0; j < frame.getRolls().size(); j++) {
-                totalScore += frame.getRolls().get(j);
+        int maxFrameIndex = frames.size() - 1;
+
+        for (int i = 0; i < maxFrameIndex; i++) {
+
+            Frame currentFrame = frames.get(i);
+            totalScore += currentFrame.getScore();
+
+            int nextFrameIndex = i + 1;
+            if (nextFrameIndex > maxFrameIndex) { break; }
+            if (currentFrame.wasStrike()) {
+                Frame nextFrame = frames.get(nextFrameIndex);
+                totalScore += nextFrame.getScore();
             }
         }
         return totalScore;
@@ -61,7 +68,7 @@ public class BowlingGame {
             pinsUp = Settings.TOTAL_PINS;
         }
 
-        if (currentFrame > Settings.MAX_FRAMES) {
+        if (currentFrame >= Settings.MAX_FRAMES && activeFrame.isComplete()) {
             gameStatus = GameStatus.FINISHED;
         }
     }
