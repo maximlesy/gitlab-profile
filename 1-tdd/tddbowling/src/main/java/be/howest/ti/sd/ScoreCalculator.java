@@ -13,8 +13,13 @@ public class ScoreCalculator {
 
             if (currentFrame.wasStrike()) {
                 totalScore += getBonus(frames, frameIndex, Settings.STRIKE_BONUS_POINTS_ROLLS);
+                frameIndex++;
+            } else if (isSpare(currentFrame)) {
+                totalScore += getBonus(frames, frameIndex, Settings.SPARE_BONUS_POINTS_ROLLS);
+                frameIndex++;
+            } else {
+                frameIndex++;
             }
-            frameIndex++;
         }
 
         return totalScore;
@@ -39,5 +44,9 @@ public class ScoreCalculator {
         }
 
         return bonus;
+    }
+
+    private static boolean isSpare(Frame frame) {
+        return frame.getRolls().size() == Settings.STRIKE_BONUS_POINTS_ROLLS && frame.getScore() == Settings.TOTAL_PINS;
     }
 }
