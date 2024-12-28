@@ -70,4 +70,14 @@ public class BowlingGameTests {
         assertThrows(BowlingGame.RollException.class, () -> bowlingGame.roll(-1));
     }
 
+    @Test
+    public void whenRollingMoreThanTwice_GameMovesToNextFrame() {
+        int expectedFrame = 2;
+
+        bowlingGame.roll(1);
+        bowlingGame.roll(1);
+
+        assertEquals(expectedFrame, bowlingGame.getFrame());
+    }
+
 }
