@@ -4,6 +4,8 @@ public class BowlingGame {
 
     private final int TOTAL_PINS = 10;
     private int pinsUp = TOTAL_PINS;
+    private int frame = 1;
+
     public int getPinsUp() {
         return pinsUp;
     }
@@ -23,6 +25,10 @@ public class BowlingGame {
 
     public int score() {
         return TOTAL_PINS - pinsUp;
+    }
+
+    public int getFrame() {
+        return frame;
     }
 
     public class RollException extends RuntimeException {
