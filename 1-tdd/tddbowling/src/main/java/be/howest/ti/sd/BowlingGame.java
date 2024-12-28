@@ -21,12 +21,10 @@ public class BowlingGame {
             throw new RollException("Cannot knock down a negative number of pins");
         }
 
-        rollsThisFrame++;
-        if (rollsThisFrame == 2) { frame++; }
+        trackRolls();
 
         pinsUp -= pinsToKnockDown;
     }
-
     public int score() {
         return TOTAL_PINS - pinsUp;
     }
@@ -34,6 +32,12 @@ public class BowlingGame {
     public int getFrame() {
         return frame;
     }
+
+    private void trackRolls() {
+        rollsThisFrame++;
+        if (rollsThisFrame == 2) { frame++; }
+    }
+
 
     public class RollException extends RuntimeException {
         public RollException(String message) {
