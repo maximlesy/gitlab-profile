@@ -1,4 +1,5 @@
 import be.howest.ti.sd.BowlingGame;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -7,10 +8,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BowlingGameTests {
+
+    private BowlingGame bowlingGame;
+
+    @BeforeEach
+    public void setUp() {
+        bowlingGame = new BowlingGame();
+    }
+
     @Test
     public void initialisingGame_StartsWithTenPinsUp() {
         //arrange
-        BowlingGame bowlingGame = new BowlingGame();
         int expectedPins = 10;
 
         //act
@@ -22,7 +30,6 @@ public class BowlingGameTests {
 
     @Test
     public void knockingDownOnePin_DecreasesPinsByOne() {
-        BowlingGame bowlingGame = new BowlingGame();
         int expectedPins = 9;
 
         bowlingGame.roll(1);
@@ -34,8 +41,6 @@ public class BowlingGameTests {
     @ParameterizedTest
     @CsvSource({"1,1", "2,2", "3,3", "4,4", "5,5", "6,6", "7,7", "8,8", "9,9", "10,10"})
     public void knockingDownPins_ReturnsCorrectScore(int pinsKnockedDown, int expectedScore) {
-        BowlingGame bowlingGame = new BowlingGame();
-
         bowlingGame.roll(pinsKnockedDown);
         int actualScore = bowlingGame.score();
 
@@ -44,8 +49,6 @@ public class BowlingGameTests {
 
     @Test
     public void knockingDownTooManyPins_ThrowsRollException() {
-        BowlingGame bowlingGame = new BowlingGame();
-
         assertThrows(BowlingGame.RollException.class, () -> bowlingGame.roll(11));
     }
 
