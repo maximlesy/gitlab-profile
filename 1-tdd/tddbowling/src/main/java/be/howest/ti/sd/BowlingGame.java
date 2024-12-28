@@ -11,4 +11,8 @@ public class BowlingGame {
     public void roll(int pinsToKnockDown) {
         pinsUp -= pinsToKnockDown;
     }
+
+    public int score() {
+        return TOTAL_PINS - pinsUp;
+    }
 }
