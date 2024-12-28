@@ -105,4 +105,15 @@ public class BowlingGameTests {
         assertThrows(BowlingGame.RollException.class, () -> bowlingGame.roll(0));
     }
 
+    @Test
+    public void knockingDownTenPinsOnFirstRoll_ImmediatelyMovesToNextFrame() {
+        int pinsKnockedDown = 10;
+        int expectedFrame = 2;
+
+        bowlingGame.roll(pinsKnockedDown);
+        int actualFrame = bowlingGame.getCurrentFrame();
+
+        assertEquals(expectedFrame, actualFrame);
+    }
+
 }
