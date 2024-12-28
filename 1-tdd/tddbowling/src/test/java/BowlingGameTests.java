@@ -156,4 +156,18 @@ public class BowlingGameTests {
         assertEquals(expectedScore, actualScore);
     }
 
+    @Test
+    public void whenASpareWasThrown_TheScoreOfTheNextRollIsAddedAsBonus() {
+        int expectedScore = 18; // 5 (first roll in frame 1) + 5 (second roll in frame 1) + 2 (bonus from frame 2) + 6 (total points in frame 2)
+
+        bowlingGame.roll(5); // 5 points in frame 1
+        bowlingGame.roll(5); // 10 points in frame 1, spare
+        bowlingGame.roll(2); // 2 points in frame 2, these points should be added as bonus in frame 1
+        bowlingGame.roll(4); // extra roll in frame 2, this one can not be accounted for in the score
+
+        int actualScore = bowlingGame.score();
+
+        assertEquals(expectedScore, actualScore);
+    }
+
 }
