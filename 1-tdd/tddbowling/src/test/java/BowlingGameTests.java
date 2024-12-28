@@ -116,4 +116,16 @@ public class BowlingGameTests {
         assertEquals(expectedFrame, actualFrame);
     }
 
+    @Test
+    public void ThrowingMultipleStrikesInARow_MovesMultipleFrames() {
+        int expectedFrame = 4;
+
+        bowlingGame.roll(10);
+        bowlingGame.roll(10);
+        bowlingGame.roll(10);
+        int actualFrame = bowlingGame.getCurrentFrame();
+        
+        assertEquals(expectedFrame, actualFrame);
+    }
+
 }
