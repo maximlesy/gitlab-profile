@@ -34,7 +34,7 @@ public class BowlingGameTests {
         int expectedFrame = 1;
 
         //act
-        int actualFrame = bowlingGame.getFrame();
+        int actualFrame = bowlingGame.getCurrentFrame();
 
         //assert
         assertEquals(expectedFrame, actualFrame);
@@ -78,7 +78,7 @@ public class BowlingGameTests {
             bowlingGame.roll(0);
         }
 
-        assertEquals(expectedFrame, bowlingGame.getFrame());
+        assertEquals(expectedFrame, bowlingGame.getCurrentFrame());
     }
 
 }
