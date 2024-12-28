@@ -53,4 +53,9 @@ public class BowlingGameTests {
         assertThrows(BowlingGame.RollException.class, () -> bowlingGame.roll(11));
     }
 
+    @Test
+    public void knockingDownNegativePins_ThrowsRollException() {
+        assertThrows(BowlingGame.RollException.class, () -> bowlingGame.roll(-1));
+    }
+
 }
