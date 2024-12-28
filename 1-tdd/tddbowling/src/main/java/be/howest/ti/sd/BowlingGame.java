@@ -38,22 +38,7 @@ public class BowlingGame {
     }
 
     public int score() {
-        int totalScore = 0;
-        int maxFrameIndex = frames.size() - 1;
-
-        for (int i = 0; i < maxFrameIndex; i++) {
-
-            Frame currentFrame = frames.get(i);
-            totalScore += currentFrame.getScore();
-
-            int nextFrameIndex = i + 1;
-            if (nextFrameIndex > maxFrameIndex) { break; }
-            if (currentFrame.wasStrike()) {
-                Frame nextFrame = frames.get(nextFrameIndex);
-                totalScore += nextFrame.getScore();
-            }
-        }
-        return totalScore;
+        return ScoreCalculator.calculateScore(frames);
     }
 
     private void knockDownPins(int pinsToKnockDown) {
