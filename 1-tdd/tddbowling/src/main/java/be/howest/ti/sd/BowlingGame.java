@@ -24,6 +24,11 @@ public class BowlingGame {
 
         verifyRoll(pinsToKnockDown);
 
+        if (pinsToKnockDown == TOTAL_PINS) {
+            currentFrame++;
+            currentFrameRolls = 0;
+        }
+
         updateFrame();
 
         pinsUp -= pinsToKnockDown;
