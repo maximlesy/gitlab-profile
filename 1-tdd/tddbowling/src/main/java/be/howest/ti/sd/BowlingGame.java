@@ -14,6 +14,10 @@ public class BowlingGame {
             throw new RollException("Cannot knock down more pins than there are up");
         }
 
+        if (pinsToKnockDown < 0) {
+            throw new RollException("Cannot knock down a negative number of pins");
+        }
+
         pinsUp -= pinsToKnockDown;
     }
 
