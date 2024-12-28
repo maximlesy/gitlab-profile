@@ -42,6 +42,7 @@
     "Gradle.BowlingGameTests.executor": "Run",
     "Gradle.BowlingGameTests.initialisingGame_StartsWithTenPinsUp.executor": "Run",
     "Gradle.BowlingGameTests.knockingDownPins_ReturnsCorrectScore.executor": "Run",
+    "Gradle.BowlingGameTests.knockingDownTooManyPins_ThrowsRollException.executor": "Run",
     "Gradle.BowlingGameTests.nothing.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -58,7 +59,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.BowlingGameTests.knockingDownPins_ReturnsCorrectScore">
+  <component name="RunManager" selected="Gradle.BowlingGameTests">
     <configuration name="BowlingGameTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -131,6 +132,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="BowlingGameTests.knockingDownTooManyPins_ThrowsRollException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;BowlingGameTests.knockingDownTooManyPins_ThrowsRollException&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="BowlingGameTests.nothing" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -157,8 +182,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.BowlingGameTests.knockingDownPins_ReturnsCorrectScore" />
         <item itemvalue="Gradle.BowlingGameTests" />
+        <item itemvalue="Gradle.BowlingGameTests.knockingDownTooManyPins_ThrowsRollException" />
+        <item itemvalue="Gradle.BowlingGameTests.knockingDownPins_ReturnsCorrectScore" />
         <item itemvalue="Gradle.BowlingGameTests.initialisingGame_StartsWithTenPinsUp" />
         <item itemvalue="Gradle.BowlingGameTests.nothing" />
       </list>
@@ -173,7 +199,7 @@
       <option name="presentableId" value="Default" />
       <updated>1735375369893</updated>
       <workItem from="1735375370961" duration="2872000" />
-      <workItem from="1735379158859" duration="1705000" />
+      <workItem from="1735379158859" duration="1914000" />
     </task>
     <servers />
   </component>

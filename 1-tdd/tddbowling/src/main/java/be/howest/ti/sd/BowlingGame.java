@@ -9,10 +9,21 @@ public class BowlingGame {
     }
 
     public void roll(int pinsToKnockDown) {
+
+        if (pinsToKnockDown > pinsUp) {
+            throw new RollException("Cannot knock down more pins than there are up");
+        }
+
         pinsUp -= pinsToKnockDown;
     }
 
     public int score() {
         return TOTAL_PINS - pinsUp;
+    }
+
+    public class RollException extends RuntimeException {
+        public RollException(String message) {
+            super(message);
+        }
     }
 }

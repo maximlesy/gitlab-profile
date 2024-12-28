@@ -4,6 +4,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BowlingGameTests {
     @Test
@@ -45,7 +46,7 @@ public class BowlingGameTests {
     public void knockingDownTooManyPins_ThrowsRollException() {
         BowlingGame bowlingGame = new BowlingGame();
 
-        assertThrows(RollException.class, () -> bowlingGame.roll(11));
+        assertThrows(BowlingGame.RollException.class, () -> bowlingGame.roll(11));
     }
 
 }
