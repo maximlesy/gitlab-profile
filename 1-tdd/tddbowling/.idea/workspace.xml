@@ -41,6 +41,7 @@
   "keyToString": {
     "Gradle.BowlingGameTests.executor": "Run",
     "Gradle.BowlingGameTests.initialisingGame_StartsWithTenPinsUp.executor": "Run",
+    "Gradle.BowlingGameTests.knockingDownPins_ReturnsCorrectScore.executor": "Run",
     "Gradle.BowlingGameTests.nothing.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -172,7 +173,7 @@
       <option name="presentableId" value="Default" />
       <updated>1735375369893</updated>
       <workItem from="1735375370961" duration="2872000" />
-      <workItem from="1735379158859" duration="1369000" />
+      <workItem from="1735379158859" duration="1705000" />
     </task>
     <servers />
   </component>

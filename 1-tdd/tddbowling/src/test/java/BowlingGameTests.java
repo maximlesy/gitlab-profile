@@ -41,4 +41,11 @@ public class BowlingGameTests {
         assertEquals(expectedScore, actualScore);
     }
 
+    @Test
+    public void knockingDownTooManyPins_ThrowsRollException() {
+        BowlingGame bowlingGame = new BowlingGame();
+
+        assertThrows(RollException.class, () -> bowlingGame.roll(11));
+    }
+
 }
