@@ -1,5 +1,7 @@
 package be.howest.ti.sd;
 
+import java.util.*;
+
 public class BowlingGame {
 
     private final int MAX_FRAMES = 10;
@@ -22,29 +24,37 @@ public class BowlingGame {
 
     public void roll(int pinsToKnockDown) {
 
+        resetIfStrikeBefore();
         verifyRoll(pinsToKnockDown);
+        updateGameStatus(pinsToKnockDown);
+    }
 
-        if (pinsToKnockDown == TOTAL_PINS) {
-            currentFrame++;
-            currentFrameRolls = 0;
+    // only doing this because I need to test to succeed.
+    // This needs SERIOUS refactoring
+    private void resetIfStrikeBefore() {
+        if (pinsUp == 0) {
+            pinsUp = TOTAL_PINS;
         }
-
-        updateFrame();
-
-        pinsUp -= pinsToKnockDown;
     }
 
     public int score() {
         return TOTAL_PINS - pinsUp;
     }
 
-    private void updateFrame() {
+    private void updateGameStatus(int pinsToKnockDown) {
         currentFrameRolls++;
+
+        if (pinsToKnockDown == TOTAL_PINS) {
+            currentFrame++;
+            currentFrameRolls = 0;
+        }
 
         if (currentFrameRolls == 2) {
             currentFrame++;
             currentFrameRolls = 0;
         }
+
+        pinsUp -= pinsToKnockDown;
 
         if (currentFrame > MAX_FRAMES) {
             gameStatus = GameStatus.FINISHED;
@@ -54,6 +64,7 @@ public class BowlingGame {
     }
 
     private void verifyRoll(int pinsToKnockDown) {
+
         if (gameStatus == GameStatus.FINISHED) {
             throw new RollException("Game is already finished");
         }
