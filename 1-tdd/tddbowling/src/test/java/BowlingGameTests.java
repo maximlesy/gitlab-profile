@@ -31,8 +31,9 @@ public class BowlingGameTests {
     @Test
     public void knockingDownOnePin_DecreasesPinsByOne() {
         int expectedPins = 9;
+        int pinsKnockedDown = 1;
 
-        bowlingGame.roll(1);
+        bowlingGame.roll(pinsKnockedDown);
         int actualPins = bowlingGame.getPinsUp();
 
         assertEquals(expectedPins, actualPins);
