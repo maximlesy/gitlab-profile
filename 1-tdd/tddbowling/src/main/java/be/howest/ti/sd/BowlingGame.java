@@ -1,21 +1,31 @@
 package be.howest.ti.sd;
-
 import java.util.*;
 
 public class BowlingGame {
+    private int pinsUp;
+    private int currentFrame;
+    private GameStatus gameStatus;
+    private List<Frame> frames;
 
-    private final int MAX_FRAMES = 10;
-    private final int TOTAL_PINS = 10;
-    private int pinsUp = TOTAL_PINS;
-    private int currentFrame = 1;
-    private GameStatus gameStatus = GameStatus.NOT_STARTED;
-    private int currentFrameRolls = 0;
+    public BowlingGame() {
+        this.currentFrame = 1;
+        this.pinsUp = Settings.TOTAL_PINS;
+        this.gameStatus = GameStatus.IN_PROGRESS;
+        this.frames = new ArrayList<>();
+
+        for (int i = 0; i < Settings.MAX_FRAMES; i++) {
+            frames.add(new Frame());
+        }
+    }
 
     public int getPinsUp() {
         return pinsUp;
     }
     public int getCurrentFrame() {
         return currentFrame;
+    }
+    public Frame getActiveFrame() {
+        return frames.get(currentFrame - 1);
     }
 
     public GameStatus getGameStatus() {
@@ -24,42 +34,35 @@ public class BowlingGame {
 
     public void roll(int pinsToKnockDown) {
 
-        resetIfStrikeBefore();
         verifyRoll(pinsToKnockDown);
-        updateGameStatus(pinsToKnockDown);
-    }
-
-    // only doing this because I need to test to succeed.
-    // This needs SERIOUS refactoring
-    private void resetIfStrikeBefore() {
-        if (pinsUp == 0) {
-            pinsUp = TOTAL_PINS;
-        }
+        knockDownPins(pinsToKnockDown);
     }
 
     public int score() {
-        return TOTAL_PINS - pinsUp;
+        int totalScore = 0;
+        for (int i = 0; i < frames.size(); i++) {
+            Frame frame = frames.get(i);
+            for(int j = 0; j < frame.getRolls().size(); j++) {
+                totalScore += frame.getRolls().get(j);
+            }
+        }
+        return totalScore;
     }
 
-    private void updateGameStatus(int pinsToKnockDown) {
-        currentFrameRolls++;
+    private void knockDownPins(int pinsToKnockDown) {
 
-        if (pinsToKnockDown == TOTAL_PINS) {
-            currentFrame++;
-            currentFrameRolls = 0;
-        }
-
-        if (currentFrameRolls == 2) {
-            currentFrame++;
-            currentFrameRolls = 0;
-        }
+        Frame activeFrame = getActiveFrame();
+        activeFrame.addRoll(pinsToKnockDown);
 
         pinsUp -= pinsToKnockDown;
 
-        if (currentFrame > MAX_FRAMES) {
+        if (activeFrame.isComplete()) {
+            currentFrame++;
+            pinsUp = Settings.TOTAL_PINS;
+        }
+
+        if (currentFrame > Settings.MAX_FRAMES) {
             gameStatus = GameStatus.FINISHED;
-        } else {
-            gameStatus = GameStatus.IN_PROGRESS;
         }
     }
 
@@ -69,15 +72,18 @@ public class BowlingGame {
             throw new RollException("Game is already finished");
         }
 
-        if (pinsToKnockDown > pinsUp) {
+        if (pinsToKnockDown > pinsUp)  {
             throw new RollException("Cannot knock down more pins than there are up");
         }
 
+        if (pinsToKnockDown > Settings.TOTAL_PINS || pinsToKnockDown - pinsUp > Settings.KNOCKDOWN_LOWER_LIMIT) {
+            throw new RollException("Trying to knock down too many pins.");
+        }
+
         if (pinsToKnockDown < 0) {
-            throw new RollException("Cannot knock down a negative number of pins");
+            throw new RollException("You must knock down at least 1 pin.");
         }
     }
-
 
     public class RollException extends RuntimeException {
         public RollException(String message) {
