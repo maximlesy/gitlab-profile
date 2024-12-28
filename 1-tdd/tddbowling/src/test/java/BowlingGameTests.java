@@ -94,4 +94,15 @@ public class BowlingGameTests {
         assertEquals(expectedGameStatus, bowlingGame.getGameStatus());
     }
 
+    @Test
+    public void rollingWhenGameHasEnded_ThrowsRollException() {
+        int numberOfRolls = 20;
+
+        for (int i = 0; i < numberOfRolls; i++) {
+            bowlingGame.roll(0);
+        }
+
+        assertThrows(BowlingGame.RollException.class, () -> bowlingGame.roll(0));
+    }
+
 }
