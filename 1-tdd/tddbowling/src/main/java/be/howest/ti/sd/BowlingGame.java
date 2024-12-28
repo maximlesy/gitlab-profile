@@ -35,7 +35,10 @@ public class BowlingGame {
 
     private void trackRolls() {
         rollsThisFrame++;
-        if (rollsThisFrame == 2) { frame++; }
+        if (rollsThisFrame == 2) {
+            frame++;
+            rollsThisFrame = 0;
+        }
     }
 
 
