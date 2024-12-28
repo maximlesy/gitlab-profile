@@ -81,4 +81,16 @@ public class BowlingGameTests {
         assertEquals(expectedFrame, bowlingGame.getCurrentFrame());
     }
 
+    @Test
+    public void rollingTwentyTimes_EndsGame() {
+        int numberOfRolls = 20;
+        int expectedGameStatus = GameStatus.FINISHED;
+
+        for (int i = 0; i < numberOfRolls; i++) {
+            bowlingGame.roll(0);
+        }
+
+        assertEquals(expectedGameStatus, bowlingGame.getGameStatus());
+    }
+
 }
