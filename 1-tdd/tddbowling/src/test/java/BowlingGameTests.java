@@ -128,4 +128,18 @@ public class BowlingGameTests {
         assertEquals(expectedFrame, actualFrame);
     }
 
+    @Test
+    public void whenAStrikeWasThrown_TheScoreOfTheNextFrameIsAddedAsBonus() {
+
+        int expectedScore = 20; //10 (strike) + 5 bonus (from frame 2) + 5 points in frame 2
+
+        bowlingGame.roll(10); // strike in frame 1
+        bowlingGame.roll(2); // first roll in frame 2 knocks down 2 pins
+        bowlingGame.roll(3); // second roll in frame 2 knocks down 3 pins
+
+        int actualScore = bowlingGame.score();
+
+        assertEquals(expectedScore, actualScore);
+    }
+
 }
