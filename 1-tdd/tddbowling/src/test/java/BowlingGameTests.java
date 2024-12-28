@@ -70,12 +70,13 @@ public class BowlingGameTests {
         assertThrows(BowlingGame.RollException.class, () -> bowlingGame.roll(-1));
     }
 
-    @Test
-    public void whenRollingMoreThanTwice_GameMovesToNextFrame() {
-        int expectedFrame = 2;
+    @ParameterizedTest
+    @CsvSource({"1,1", "2,2", "3,2", "4,3", "5,3", "6,4", "7,4"})
+    public void whenRollingMoreThanTwice_GameMovesToNextFrame(int numberOfRolls, int expectedFrame) {
 
-        bowlingGame.roll(1);
-        bowlingGame.roll(1);
+        for (int i = 0; i < numberOfRolls; i++) {
+            bowlingGame.roll(0);
+        }
 
         assertEquals(expectedFrame, bowlingGame.getFrame());
     }
