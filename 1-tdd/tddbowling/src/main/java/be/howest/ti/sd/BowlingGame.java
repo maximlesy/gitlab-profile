@@ -6,4 +6,8 @@ public class BowlingGame {
     public int getPins() {
         return pins;
     }
+
+    public void roll(int pinsToKnockDown) {
+        pins -= pinsToKnockDown;
+    }
 }

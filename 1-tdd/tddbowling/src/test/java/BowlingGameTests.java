@@ -26,6 +26,5 @@ public class BowlingGameTests {
 
         assertEquals(expectedPins, actualPins);
     }
-
-
+    
 }

@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee9b381c-c434-405e-946b-8e299dc01321" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/howest/ti/sd/BowlingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/howest/ti/sd/BowlingGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-tdd/tddbowling/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/1-tdd/tddbowling/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BowlingGameTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BowlingGameTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +147,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735375369893</updated>
-      <workItem from="1735375370961" duration="2319000" />
+      <workItem from="1735375370961" duration="2643000" />
     </task>
     <servers />
   </component>
