@@ -14,7 +14,6 @@ int main() {
 	unsigned long long factorial = 1;
 
 	number = read_int();
-
 	if (number < 0) {
 		write_str("does not compute");
 		return 0;
