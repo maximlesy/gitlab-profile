@@ -65,17 +65,18 @@ int main() {
     // Using the alternative approach this time because it needs more variables than the solution above
     // I only use n1, n2 and n3
     // n1 = input which is transformed into the output, n2 = right digit, n3 = left digit
-
     n1 = read_int();
 
-    if ((n1 >= 10 && n1 <= 99) || (n1 <= -10 && n1 >= -99)) {
-        n2 = n1 % 10; // extract the right digit (5)
-        n3 = (n1 - n2) / 10; // extract the left digit (6)        
-        n1 = ((n2 * 10) + n3); // *input becomes output*: multiply the right digit with 10 again and add the left number after it (56)
-    }
+    test ((n1 < 10 || n1 > 99) && (n1 > -10 || n1 < -99));
+    c_goto end;
 
-    write_int(n1);
+    write_str("Performing transformation");
+    n2 = n1 % 10; // extract the right digit (5)
+    n3 = (n1 - n2) / 10; // extract the left digit (6)        
+    n1 = ((n2 * 10) + n3); // *input becomes output*: multiply the right digit with 10 again and add the left number after it (56)
 
-    return 0;
+    end:
+        write_int(n1);
+        return 0;
 }
 
