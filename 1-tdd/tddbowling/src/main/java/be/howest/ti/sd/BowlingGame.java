@@ -32,7 +32,6 @@ public class BowlingGame {
     }
 
     public void roll(int pinsToKnockDown) {
-
         verifyRoll(pinsToKnockDown);
         knockDownPins(pinsToKnockDown);
     }
@@ -42,22 +41,19 @@ public class BowlingGame {
     }
 
     private void knockDownPins(int pinsToKnockDown) {
+        Frame nextThrowFrame = getActiveFrame();
+        nextThrowFrame.addRoll(pinsToKnockDown);
 
-        Frame activeFrame = getActiveFrame();
-        activeFrame.addRoll(pinsToKnockDown);
-
-        if (!activeFrame.isFinalFrame() && activeFrame.isComplete()) {
-            currentFrame++;
+        if (nextThrowFrame.isComplete()) {
+            if (nextThrowFrame.isFinalFrame()) {
+                gameStatus = GameStatus.FINISHED;
+            } else {
+                currentFrame++;
+            }
         }
-
-        if (activeFrame.isFinalFrame() && activeFrame.isComplete()) {
-            gameStatus = GameStatus.FINISHED;
-        } else {
-            gameStatus = GameStatus.IN_PROGRESS;
-        }
-
-        activeFrame = getActiveFrame();
-        pinsUp = activeFrame.getPinsRemaining();
+        
+        nextThrowFrame = getActiveFrame();
+        pinsUp = nextThrowFrame.getPinsRemaining();
     }
 
     private void verifyRoll(int pinsToKnockDown) {
