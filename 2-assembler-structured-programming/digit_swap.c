@@ -48,32 +48,33 @@ This can be done in JavaScript using `Math.floor(x/y)`.
 // -42 - 1 = -43
 
 int main() {
-    int number;
-    int swappedNumber;
 
-    number = read_int();
+    // n1 = input, n2 = output
+    // n1 = read_int();
 
-    if (number >= 10 && number <= 99) {
-        swappedNumber = (10 * number - 1) % 99 + 1;
-    } else if (number <= -10 && number >= -99) {
-        swappedNumber = (10 * number + 1) % 99 - 1;
-    } else {
-        swappedNumber = number;
-    }
-
-    write_int(swappedNumber);
-
-    // Alternative approach (own code base on https://codecrucks.com/program/program-to-swap-first-and-last-digit-of-a-number-using-while-loop/)
-    
-    // if ((number >= 10 && number <= 99) || (number <= -10 && number >= -99)) {
-    //     int right = number % 10; // extract the right digit (5)
-    //     int left = (number - right) / 10; // extract the left digit (6)        
-    //     swappedNumber = ((right * 10) + left); // multiply the right digit with 10 again and add the left number after it (56)
+    // if (n1 >= 10 && n1 <= 99) {
+    //     n2 = (10 * n1 - 1) % 99 + 1;
+    // } else if (n1 <= -10 && n1 >= -99) {
+    //     n2 = (10 * n1 + 1) % 99 - 1;
     // } else {
-    //     swappedNumber = number;
+    //     n2 = n1;
     // }
 
-    // write_int(swappedNumber);
+    // write_int(n2);
+
+    // Using the alternative approach this time because it needs more variables than the solution above
+    // I only use n1, n2 and n3
+    // n1 = input which is transformed into the output, n2 = right digit, n3 = left digit
+
+    n1 = read_int();
+
+    if ((n1 >= 10 && n1 <= 99) || (n1 <= -10 && n1 >= -99)) {
+        int n2 = n1 % 10; // extract the right digit (5)
+        int n3 = (n1 - n2) / 10; // extract the left digit (6)        
+        n1 = ((n2 * 10) + n3); // *input becomes output*: multiply the right digit with 10 again and add the left number after it (56)
+    }
+
+    write_int(n1);
 
     return 0;
 }
