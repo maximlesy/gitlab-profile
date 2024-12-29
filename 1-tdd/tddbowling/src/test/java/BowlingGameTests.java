@@ -170,4 +170,17 @@ public class BowlingGameTests {
         assertEquals(expectedScore, actualScore);
     }
 
+    @Test
+    public void whenStrikeOrSpareIsThrownInLastFrame_GameDoesNotEnd() {
+
+        int numberOfRolls = 10; //simulating all strikes (needs bonus throws in last frame)
+        GameStatus expectedGameStatus = GameStatus.IN_PROGRESS;
+
+        for (int i = 0; i < numberOfRolls; i++) {
+            bowlingGame.roll(10); // all strikes - so we need bonus throws in the last frame
+        }
+
+        assertEquals(expectedGameStatus, bowlingGame.getGameStatus());
+    }
+
 }
