@@ -21,20 +21,17 @@ that outputs them in reverse order.
 */
 
 int main() {	
-	int numbers[5];
 
-    for (int i = 0; i < 5; i++) {
-        numbers[i] = read_int();
-    }
-
-    write_str("Input:");
-    for (int i = 0; i < 5; i++) {
-        write_int(numbers[i]);
+    //n1 = counter, n2 = limit
+    n2 = 5;
+    for (n1 = 0; n1 < n2; n1++) {
+        push_int(read_int());
     }
 
     write_str("Output:");
-    for (int i = 4; i >= 0; i--) {
-        write_int(numbers[i]);
+    for (n1 = 0; n1 < n2; n1++) {
+        pop_int();
+        write_int(nx);
     }
 
     return 0;
