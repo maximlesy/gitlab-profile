@@ -28,10 +28,10 @@ Write a second version `fibFast` that uses a loop rather than recursion.
 
 void fibFast() {
 
-    if (nx == 0 || nx == 1) {
-        return;
-    }
+    test (nx == 0 || nx == 1);
+    c_goto method_end;
 
+    write_str("Calculating ...");
     n1 = 0; //previous
     n2 = 1; //current
     //n3 will function as 'next';
@@ -41,7 +41,8 @@ void fibFast() {
         n2 = n3;
     }
 
-    nx = n2;
+    method_end:
+        nx = n2;
 }
 
 int main() {
