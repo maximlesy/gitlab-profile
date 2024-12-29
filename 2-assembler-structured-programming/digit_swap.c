@@ -35,9 +35,34 @@ This can be done in JavaScript using `Math.floor(x/y)`.
     > -70
     -7
 */
-int main() {	
-	end:
-	write_str("end main");
-	return 0;
+
+// Example (source: https://stackoverflow.com/questions/74311104/given-a-two-digit-integer-swap-its-digits-and-print-the-result-python)
+// Positive two digit number:
+// 10 * 34 - 1 = 339
+// 339 % 99 = 42
+// 42 + 1 = 43
+
+// Negative two digit number:
+// 10 * (-34) + 1 = -339
+// -339 % 99 = -42
+// -42 - 1 = -43
+
+int main() {
+    int number;
+    int swappedNumber;
+
+    number = read_int();
+
+    if (number >= 10 && number <= 99) {
+        swappedNumber = (10 * number - 1) % 99 + 1;
+    } else if (number <= -10 && number >= -99) {
+        swappedNumber = (10 * number + 1) % 99 - 1;
+    } else {
+        swappedNumber = number;
+    }
+
+    write_int(swappedNumber);
+
+    return 0;
 }
 
