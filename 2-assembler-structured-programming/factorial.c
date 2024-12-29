@@ -15,17 +15,20 @@ int main() {
 
 	n1 = read_int();
 	n2 = 1;
-
-	if (n1 < 0) {
-		write_str("does not compute");
-		return 0;
-	}
+	
+	test n1 < 0; 
+	c_goto does_not_compute;
 
 	for (n3 = 1; n3 <= n1; n3++) {
             n2 *= n3;
     }
 
     write_int(n2);
+	goto end;
 	
-	return 0;
+	does_not_compute:
+		write_str("does not compute");
+
+	end:
+		return 0;
 }
