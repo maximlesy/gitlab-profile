@@ -5,7 +5,7 @@ public class BowlingGame {
     private int pinsUp;
     private int currentFrame;
     private GameStatus gameStatus;
-    private List<Frame> frames;
+    private final List<Frame> frames;
 
     public BowlingGame() {
         this.currentFrame = 0;
@@ -14,7 +14,7 @@ public class BowlingGame {
         this.frames = new ArrayList<>();
 
         for (int i = 0; i < Settings.MAX_FRAMES; i++) {
-            frames.add(new Frame());
+            frames.add(new Frame(i));
         }
     }
 
