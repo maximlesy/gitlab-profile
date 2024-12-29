@@ -4,62 +4,53 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Frame {
-    private int frameNumber;
-    private List<Integer> rolls;
+    private final int frameNumber;
+    private final List<Integer> pointsPerThrow;
+
     public Frame(int frameNumber) {
         this.frameNumber = frameNumber;
-        this.rolls = new ArrayList<>();
+        this.pointsPerThrow = new ArrayList<>();
     }
 
-    public boolean isComplete() {
-        if ((isFinalFrame() && wasStrike()) || (isFinalFrame() && isSpare())) {
-
-            // Strike was thrown and we allowed for the extra roll
-            if (rolls.size() == 3) {
-                return true;
-            }
-
-            // Spare was thrown and we allowed for the extra roll
-            if (rolls.size() == 2 && getScore() < Settings.TOTAL_PINS) {
-                return true;
-            }
-
-            return false;
-
-        } else {
-            return rolls.size() == Settings.ROLLS_PER_FRAME || rolls.contains(Settings.TOTAL_PINS);
-        }
+    public List<Integer> getPointsPerThrow() {
+        return pointsPerThrow;
     }
-
-    public void addRoll(int pinsKnockedDown) {
-        if ((isFinalFrame() && wasStrike()) || (isFinalFrame() && isSpare())) {
-            rolls.add(pinsKnockedDown);
-        }
-        if (rolls.size() < Settings.ROLLS_PER_FRAME) {
-            rolls.add(pinsKnockedDown);
-        }
+    public int getScore() {
+        return pointsPerThrow.stream().reduce(0, Integer::sum);
     }
-    public List<Integer> getRolls() {
-        return rolls;
-    }
-    public boolean wasStrike() {
-        return rolls.contains(Settings.TOTAL_PINS);
+    public boolean isStrike() {
+        return pointsPerThrow.contains(Settings.TOTAL_PINS);
     }
 
     public boolean isSpare() {
-        return getRolls().size() == Settings.STRIKE_BONUS_POINTS_ROLLS && getScore() == Settings.TOTAL_PINS;
+        return getPointsPerThrow().size() == Settings.STRIKE_BONUS_POINTS_ROLLS && getScore() == Settings.TOTAL_PINS;
     }
-
-    public int getScore() {
-        return rolls.stream().reduce(0, Integer::sum);
+    public void addRoll(int pinsKnockedDown) {
+        if (isFinalFrame() && (isStrike() || isSpare())) {
+            this.pointsPerThrow.add(pinsKnockedDown);
+        } else if (this.pointsPerThrow.size() < Settings.ROLLS_PER_FRAME) {
+            this.pointsPerThrow.add(pinsKnockedDown);
+        }
     }
-
+    public boolean isComplete() {
+        if (isFinalFrame()) {
+            return isFinalFrameComplete();
+        } else {
+            return pointsPerThrow.size() == Settings.ROLLS_PER_FRAME || pointsPerThrow.contains(Settings.TOTAL_PINS);
+        }
+    }
+    private boolean isFinalFrameComplete() {
+        if (isStrike() || isSpare()) {
+            return pointsPerThrow.size() == 3 || (pointsPerThrow.size() == 2 && getScore() < Settings.TOTAL_PINS);
+        }
+        return pointsPerThrow.size() == Settings.ROLLS_PER_FRAME;
+    }
     public boolean isFinalFrame() {
         return frameNumber == Settings.MAX_FRAMES - 1;
     }
 
-    public int informPinsUp() {
-        if (isFinalFrame() && wasStrike()) {
+    public int getPinsRemaining() {
+        if (isFinalFrame() && isStrike()) {
             return Settings.TOTAL_PINS;
         }
         return Settings.TOTAL_PINS - getScore();

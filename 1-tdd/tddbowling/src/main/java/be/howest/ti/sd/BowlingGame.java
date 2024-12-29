@@ -57,7 +57,7 @@ public class BowlingGame {
         }
 
         activeFrame = getActiveFrame();
-        pinsUp = activeFrame.informPinsUp();
+        pinsUp = activeFrame.getPinsRemaining();
     }
 
     private void verifyRoll(int pinsToKnockDown) {

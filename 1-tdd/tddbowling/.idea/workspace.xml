@@ -51,7 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.BowlingGameTests.executor": "Debug",
+    "Gradle.BowlingGameTests.executor": "Run",
     "Gradle.BowlingGameTests.initialisingGame_StartsWithTenPinsUp.executor": "Run",
     "Gradle.BowlingGameTests.knockingDownPins_ReturnsCorrectScore.executor": "Run",
     "Gradle.BowlingGameTests.knockingDownTooManyPins_ThrowsRollException.executor": "Run",

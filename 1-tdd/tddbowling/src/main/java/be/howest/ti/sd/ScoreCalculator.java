@@ -11,7 +11,7 @@ public class ScoreCalculator {
             Frame currentFrame = frames.get(frameIndex);
             totalScore += currentFrame.getScore();
 
-            if (currentFrame.wasStrike()) {
+            if (currentFrame.isStrike()) {
                 totalScore += getBonus(frames, frameIndex, Settings.STRIKE_BONUS_POINTS_ROLLS);
                 frameIndex++;
             } else if (currentFrame.isSpare()) {
@@ -31,7 +31,7 @@ public class ScoreCalculator {
         int nextFrameIndex = frameIndex + 1;
 
         while (rollsCounted < rollsToCount && nextFrameIndex < frames.size()) {
-            List<Integer> nextRolls = frames.get(nextFrameIndex).getRolls();
+            List<Integer> nextRolls = frames.get(nextFrameIndex).getPointsPerThrow();
             for (int roll : nextRolls) {
                 if (rollsCounted < rollsToCount) {
                     bonus += roll;
