@@ -69,8 +69,8 @@ int main() {
     n1 = read_int();
 
     if ((n1 >= 10 && n1 <= 99) || (n1 <= -10 && n1 >= -99)) {
-        int n2 = n1 % 10; // extract the right digit (5)
-        int n3 = (n1 - n2) / 10; // extract the left digit (6)        
+        n2 = n1 % 10; // extract the right digit (5)
+        n3 = (n1 - n2) / 10; // extract the left digit (6)        
         n1 = ((n2 * 10) + n3); // *input becomes output*: multiply the right digit with 10 again and add the left number after it (56)
     }
 
