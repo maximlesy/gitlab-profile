@@ -195,4 +195,18 @@ public class BowlingGameTests {
         assertEquals(expectedGameStatus, bowlingGame.getGameStatus());
     }
 
+    @Test
+    public void whenAllStrikesAreThrown_ScoreIsThreeHundred() {
+        int numberOfRolls = 12; //simulating all strikes (needs bonus throws in last frame)
+        int expectedScore = 300;
+
+        for (int i = 0; i < numberOfRolls; i++) {
+            bowlingGame.roll(10); // all strikes - so we need bonus throws in the last frame
+        }
+
+        int actualScore = bowlingGame.score();
+
+        assertEquals(expectedScore, actualScore);
+    }
+
 }
