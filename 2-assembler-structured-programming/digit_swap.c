@@ -53,10 +53,20 @@ int main() {
 
     number = read_int();
 
-    if (number >= 10 && number <= 99) {
-        swappedNumber = (10 * number - 1) % 99 + 1;
-    } else if (number <= -10 && number >= -99) {
-        swappedNumber = (10 * number + 1) % 99 - 1;
+    // if (number >= 10 && number <= 99) {
+    //     swappedNumber = (10 * number - 1) % 99 + 1;
+    // } else if (number <= -10 && number >= -99) {
+    //     swappedNumber = (10 * number + 1) % 99 - 1;
+    // } else {
+    //     swappedNumber = number;
+    // }
+
+    // Alternative approach (own code base on https://codecrucks.com/program/program-to-swap-first-and-last-digit-of-a-number-using-while-loop/)
+    
+    if ((number >= 10 && number <= 99) || (number <= -10 && number >= -99)) {
+        int right = number % 10; // extract the right digit (5)
+        int left = (number - right) / 10; // extract the left digit (6)        
+        swappedNumber = ((right * 10) + left); // multiply the right digit with 10 again and add the left number after it (56)
     } else {
         swappedNumber = number;
     }
