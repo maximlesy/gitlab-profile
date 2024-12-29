@@ -46,16 +46,18 @@ public class BowlingGame {
         Frame activeFrame = getActiveFrame();
         activeFrame.addRoll(pinsToKnockDown);
 
-        pinsUp -= pinsToKnockDown;
-
-        if (activeFrame.isComplete()) {
+        if (!activeFrame.isFinalFrame() && activeFrame.isComplete()) {
             currentFrame++;
-            pinsUp = Settings.TOTAL_PINS;
         }
 
-        if (currentFrame >= Settings.MAX_FRAMES && activeFrame.isComplete()) {
+        if (activeFrame.isFinalFrame() && activeFrame.isComplete()) {
             gameStatus = GameStatus.FINISHED;
+        } else {
+            gameStatus = GameStatus.IN_PROGRESS;
         }
+
+        activeFrame = getActiveFrame();
+        pinsUp = activeFrame.informPinsUp();
     }
 
     private void verifyRoll(int pinsToKnockDown) {

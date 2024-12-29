@@ -48,33 +48,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Gradle.BowlingGameTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BowlingGameTests.initialisingGame_StartsWithTenPinsUp.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BowlingGameTests.knockingDownPins_ReturnsCorrectScore.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BowlingGameTests.knockingDownTooManyPins_ThrowsRollException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BowlingGameTests.nothing.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BowlingGameTests.rollingWhenGameHasEnded_ThrowsRollException.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;assignment/tdd&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/bati/S3/Software Design/gitlab-profile&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/bati/S3/Software Design/gitlab-profile/1-tdd/tddbowling/src/main/java/be/howest/ti/sd/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.BowlingGameTests.executor": "Debug",
+    "Gradle.BowlingGameTests.initialisingGame_StartsWithTenPinsUp.executor": "Run",
+    "Gradle.BowlingGameTests.knockingDownPins_ReturnsCorrectScore.executor": "Run",
+    "Gradle.BowlingGameTests.knockingDownTooManyPins_ThrowsRollException.executor": "Run",
+    "Gradle.BowlingGameTests.nothing.executor": "Run",
+    "Gradle.BowlingGameTests.rollingWhenGameHasEnded_ThrowsRollException.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "assignment/tdd",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/bati/S3/Software Design/gitlab-profile",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "D:/bati/S3/Software Design/gitlab-profile/1-tdd/tddbowling/src/main/java/be/howest/ti/sd/Main.java",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Gradle.BowlingGameTests">
     <configuration name="BowlingGameTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -232,6 +232,11 @@
             <option name="lambda-ordinal" value="0" />
           </properties>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/BowlingGameTests.java</url>
+          <line>191</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

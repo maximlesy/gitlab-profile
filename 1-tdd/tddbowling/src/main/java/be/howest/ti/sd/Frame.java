@@ -32,7 +32,10 @@ public class Frame {
     }
 
     public void addRoll(int pinsKnockedDown) {
-        if(rolls.size() < Settings.ROLLS_PER_FRAME) {
+        if ((isFinalFrame() && wasStrike()) || (isFinalFrame() && isSpare())) {
+            rolls.add(pinsKnockedDown);
+        }
+        if (rolls.size() < Settings.ROLLS_PER_FRAME) {
             rolls.add(pinsKnockedDown);
         }
     }
@@ -51,7 +54,14 @@ public class Frame {
         return rolls.stream().reduce(0, Integer::sum);
     }
 
-    private boolean isFinalFrame() {
+    public boolean isFinalFrame() {
         return frameNumber == Settings.MAX_FRAMES - 1;
+    }
+
+    public int informPinsUp() {
+        if (isFinalFrame() && wasStrike()) {
+            return Settings.TOTAL_PINS;
+        }
+        return Settings.TOTAL_PINS - getScore();
     }
 }
