@@ -34,3 +34,11 @@
 
 #### Bowling rules
 * [Bowling points calculator](https://www.sportcalculators.com/bowling-score-calculator)
+
+
+## Assembler and structured Programming
+
+### Bronnen
+* [Use cl command on Windows](https://learn.microsoft.com/en-us/cpp/build/walkthrough-compile-a-c-program-on-the-command-line?view=msvc-170)
+* [Structured Programming](https://en.wikipedia.org/wiki/Structured_programming)
+* [Difference between structured and unstructured programming](https://www.geeksforgeeks.org/difference-between-structured-and-unstructured-programming/)
