@@ -10,22 +10,26 @@ simply print `does not compute`.
 */
 
 int main() {	
+    // n1 = input, n2 = factorial, n3 = loop counter
+    n1 = read_int();
+    n2 = 1;
+    n3 = 1;
 
-	//n1 = input, n2 = factorial, n3 = loop counter
+    test n1 < 0; 
+    c_goto does_not_compute;
 
-	n1 = read_int();
-	n2 = 1;
-	
-	test n1 < 0; 
-	c_goto does_not_compute;
+	loop_start:
+		test n3 > n1;
+		c_goto end_loop;
 
-	for (n3 = 1; n3 <= n1; n3++) {
-            n2 *= n3;
-    }
+		n2 *= n3;
+		n3++;
+		goto loop_start;
 
-    write_int(n2);
-	goto end;
-	
+	end_loop:
+		write_int(n2);
+		goto end;
+
 	does_not_compute:
 		write_str("does not compute");
 
