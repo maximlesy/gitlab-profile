@@ -12,7 +12,23 @@ public class Frame {
     }
 
     public boolean isComplete() {
-        return rolls.size() == Settings.ROLLS_PER_FRAME || rolls.contains(Settings.TOTAL_PINS);
+        if ((isFinalFrame() && wasStrike()) || (isFinalFrame() && isSpare())) {
+
+            // Strike was thrown and we allowed for the extra roll
+            if (rolls.size() == 3) {
+                return true;
+            }
+
+            // Spare was thrown and we allowed for the extra roll
+            if (rolls.size() == 2 && getScore() < Settings.TOTAL_PINS) {
+                return true;
+            }
+
+            return false;
+
+        } else {
+            return rolls.size() == Settings.ROLLS_PER_FRAME || rolls.contains(Settings.TOTAL_PINS);
+        }
     }
 
     public void addRoll(int pinsKnockedDown) {
