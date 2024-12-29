@@ -20,20 +20,34 @@ that outputs them in reverse order.
     1
 */
 
-int main() {	
-
-    //n1 = counter, n2 = limit
+int main() {
+    // n1 = counter, n2 = limit
     n2 = 5;
-    for (n1 = 0; n1 < n2; n1++) {
-        push_int(read_int());
-    }
+    n1 = 0;
 
-    write_str("Output:");
-    for (n1 = 0; n1 < n2; n1++) {
+    loop_start_push:
+        test n1 >= n2;
+        c_goto end_push;
+
+        push_int(read_int());
+        n1++;
+        goto loop_start_push;
+
+    end_push:
+        write_str("Output:");
+        n1 = 0;
+
+    loop_start_pop:
+        test n1 >= n2;
+        c_goto end;
+
         pop_int();
         write_int(nx);
-    }
+        n1++;
+        goto loop_start_pop;
 
-    return 0;
+    end:
+        return 0;
 }
+
 
