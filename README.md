@@ -44,3 +44,5 @@
 * [Difference between structured and unstructured programming](https://www.geeksforgeeks.org/difference-between-structured-and-unstructured-programming/)
 * [Swapping digits formula](https://stackoverflow.com/questions/74311104/given-a-two-digit-integer-swap-its-digits-and-print-the-result-python)
 * [Swapping digits alternative formula](https://codecrucks.com/program/program-to-swap-first-and-last-digit-of-a-number-using-while-loop/)
+* [Detecting (integer) overflow in C](https://stackoverflow.com/questions/55468823/how-to-detect-integer-overflow-in-c)
+* [long long](https://stackoverflow.com/questions/2550345/whats-the-difference-between-unsigned-long-long-int-in-c-c)
