@@ -46,3 +46,4 @@
 * [Swapping digits alternative formula](https://codecrucks.com/program/program-to-swap-first-and-last-digit-of-a-number-using-while-loop/)
 * [Detecting (integer) overflow in C](https://stackoverflow.com/questions/55468823/how-to-detect-integer-overflow-in-c)
 * [long long](https://stackoverflow.com/questions/2550345/whats-the-difference-between-unsigned-long-long-int-in-c-c)
+* [redefinition; different basic types error](https://stackoverflow.com/questions/16424239/error-c2371-redefinition-different-basic-types-why)

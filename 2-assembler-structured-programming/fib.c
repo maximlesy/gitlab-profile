@@ -26,35 +26,36 @@ Write a second version `fibFast` that uses a loop rather than recursion.
 
 */
 
-int main() {
-    int number;
+void fibFast() {
 
+    if (nx == 0 || nx == 1) {
+        return;
+    }
+
+    n1 = 0; //previous
+    n2 = 1; //current
+    //n3 will function as 'next';
+    for (int i = 2; i <= nx; i++) {
+        n3 = n1 + n2;
+        n1 = n2;
+        n2 = n3;
+    }
+
+    nx = n2;
+}
+
+int main() {
     write_str("> Enter the n-th number you want of the Fibonnaci sequence. ");
     write_str("> The sequence is:   0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...");
     write_str("> The positions are: 0, 1, 2, 3, 4, 5, 6, 7,  8,  9,  10, 11, 12,  ...");
 
-    number = read_int();
-    int result = fibFast(number);
-    write_int(result);
+    // nx acts as a double agent: it's the original input
+    // that is transformed into the output (the input is lost along the way)
+    nx = read_int();
+    fibFast(); 
+    write_int(nx);
 
     return 0;
-}
-
-int fibFast(int number) {
-
-    if (number == 0) {
-        return 0;
-    } else if (number == 1) {
-        return 1;
-    }
-
-    int previous = 0, current = 1, next;
-    for (int i = 2; i <= number; i++) {
-        next = previous + current;
-        previous = current;
-        current = next;
-    }
-    return current;
 }
 
 
