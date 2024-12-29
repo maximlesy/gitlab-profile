@@ -10,20 +10,22 @@ simply print `does not compute`.
 */
 
 int main() {	
-	int number;
-	unsigned long long factorial = 1;
 
-	number = read_int();
-	if (number < 0) {
+	//n1 = input, n2 = factorial, n3 = loop counter
+
+	n1 = read_int();
+	n2 = 1;
+
+	if (n1 < 0) {
 		write_str("does not compute");
 		return 0;
 	}
 
-	for (int i = 1; i <= number; i++) {
-            factorial *= (unsigned long long)i;
+	for (n3 = 1; n3 <= n1; n3++) {
+            n2 *= n3;
     }
 
-    printf("%llu\n", factorial); // not using write_str because of compiler warnings
+    write_int(n2);
 	
 	return 0;
 }
