@@ -1,4 +1,4 @@
-package be.howest.ti.sd;
+package be.howest.ti.sd.bowling;
 
 public enum GameStatus {
     NOT_STARTED,

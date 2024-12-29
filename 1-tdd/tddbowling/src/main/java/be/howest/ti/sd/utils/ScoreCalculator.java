@@ -1,4 +1,6 @@
-package be.howest.ti.sd;
+package be.howest.ti.sd.utils;
+
+import be.howest.ti.sd.bowling.Frame;
 
 import java.util.List;
 

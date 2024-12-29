@@ -1,4 +1,6 @@
-package be.howest.ti.sd;
+package be.howest.ti.sd.bowling;
+
+import be.howest.ti.sd.utils.Settings;
 
 import java.util.ArrayList;
 import java.util.List;

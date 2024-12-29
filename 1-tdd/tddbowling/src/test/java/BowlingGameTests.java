@@ -1,5 +1,6 @@
-import be.howest.ti.sd.BowlingGame;
-import be.howest.ti.sd.GameStatus;
+import be.howest.ti.sd.bowling.BowlingGame;
+import be.howest.ti.sd.bowling.GameStatus;
+import be.howest.ti.sd.exceptions.RollException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -63,12 +64,12 @@ public class BowlingGameTests {
 
     @Test
     public void knockingDownTooManyPins_ThrowsRollException() {
-        assertThrows(BowlingGame.RollException.class, () -> bowlingGame.roll(11));
+        assertThrows(RollException.class, () -> bowlingGame.roll(11));
     }
 
     @Test
     public void knockingDownNegativePins_ThrowsRollException() {
-        assertThrows(BowlingGame.RollException.class, () -> bowlingGame.roll(-1));
+        assertThrows(RollException.class, () -> bowlingGame.roll(-1));
     }
 
     @ParameterizedTest
@@ -102,7 +103,7 @@ public class BowlingGameTests {
             bowlingGame.roll(0);
         }
 
-        assertThrows(BowlingGame.RollException.class, () -> bowlingGame.roll(0));
+        assertThrows(RollException.class, () -> bowlingGame.roll(0));
     }
 
     @Test

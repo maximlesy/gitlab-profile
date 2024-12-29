@@ -227,7 +227,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/BowlingGameTests.java</url>
-          <line>104</line>
+          <line>105</line>
           <properties>
             <option name="lambda-ordinal" value="0" />
           </properties>
@@ -235,7 +235,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/BowlingGameTests.java</url>
-          <line>191</line>
+          <line>192</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>

@@ -1,4 +1,4 @@
-package be.howest.ti.sd;
+package be.howest.ti.sd.utils;
 
 public class Settings {
     public static final int MAX_FRAMES = 10;

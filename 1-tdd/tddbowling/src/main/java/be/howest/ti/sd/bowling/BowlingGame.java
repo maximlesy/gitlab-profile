@@ -1,4 +1,8 @@
-package be.howest.ti.sd;
+package be.howest.ti.sd.bowling;
+import be.howest.ti.sd.utils.ScoreCalculator;
+import be.howest.ti.sd.utils.Settings;
+import be.howest.ti.sd.exceptions.RollException;
+
 import java.util.*;
 
 public class BowlingGame {
@@ -51,7 +55,7 @@ public class BowlingGame {
                 currentFrame++;
             }
         }
-        
+
         nextThrowFrame = getActiveFrame();
         pinsUp = nextThrowFrame.getPinsRemaining();
     }
@@ -72,12 +76,6 @@ public class BowlingGame {
 
         if (pinsToKnockDown < 0) {
             throw new RollException("You must knock down at least 1 pin.");
-        }
-    }
-
-    public class RollException extends RuntimeException {
-        public RollException(String message) {
-            super(message);
         }
     }
 }
