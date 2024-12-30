@@ -1,6 +1,6 @@
 # Documentation and/or resources
 
-## Test Driven Development (TDD)
+## 1 - Test Driven Development (TDD)
 
 ### Reflectie
 
@@ -34,3 +34,8 @@
 
 #### Bowling rules
 * [Bowling points calculator](https://www.sportcalculators.com/bowling-score-calculator)
+
+## 3 - Competitive Programming
+
+> **!** De opdracht wordt/werd uitgevoerd tijdens het examenmoment.
+> Reden: werkstudent
