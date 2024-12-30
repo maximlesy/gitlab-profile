@@ -19,20 +19,24 @@ int main() {
     c_goto does_not_compute;
 
 	loop_start:
-		test n3 > n1;
+		test n3 > n1; // count up to the factorial asked for
 		c_goto end_loop;
 
 		//n2 *= n3;
-		int result = 0;
+
+		push_int(n3); // Putting n3 on stack because we want to use n3 for arithmetics (n3 = result)
 		nx = n3;
+		n3 = 0;
 			while (nx > 0) {
-			result += n2;
+			n3 += n2;
 			nx--;
 		}
 
-		n2 = result;
-		write_str("n2 is ...");
-		write_int(n2);
+		n2 = n3;
+		
+		// restoring n3 from stack
+		nx = pop_int();
+		n3 = nx;
 		n3++;
 
 		goto loop_start;
