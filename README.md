@@ -35,6 +35,25 @@
 #### Bowling rules
 * [Bowling points calculator](https://www.sportcalculators.com/bowling-score-calculator)
 
+## 2 - Assembly & Structured Programming
+
+### Reflectie
+Initieel zag ik niet in waarom dit hoofdstuk 'assembly' én 'structured programming' heette.
+Gaandeweg werd me dit echter helemaal duidelijk: we maakten een vertaalslag van de programmeerstijl die we gewend zijn en 
+waar we van houden (en die bovendien quasi standaard 'structured' is?) naar een vorm van assembly code die telkens meer en meer 'unstructured' werd (lees: minder leesbaar),
+maar natuurlijk wel nog steeds is (lees: neigt) naar machinecode.
+
+De belangrijkste zaken die ik opstak uit deze opdracht zijn:
+* **Alternatief nadenken over oplossingen** met sterke restricties (nl. het beperken van variabelen)
+* Indien de beperking niet vol te houden is was het fijn om de werking van een **eigen soort stack te zien en de overhead die daarbij komt kijken**
+* Moderne programmeertalen bevatten veel **syntatic sugar**: heel concreet heeft in deze opdracht een `for` lus gebruiken een nadelen omdat het nood heeft aan een extra teller,
+en dus een extra variabele. Er zijn andere manieren om dit op te lossen. In die zin is een `while` 'zuiniger'. Je moet nog steeds een conditie checken om de lus te beïndigen, maar 
+je kan wel berusten op constanten ipv. variabelen.
+* Zelfs **arithemtiek kan opgelost worden met enkel optellingen/aftrekkingen** indien correct toegepast. In die zin is het kunnen gebruiken van `* % /` ook "syntactic sugar".
+Niet letterlijk natuurlijk, maar er is iets meer 'basic'.
+* `if ... else`, `for/while/..` zijn er voor het gemak. Je kan alles oplossen met `gotos`, maar dat gaat snel **ten kosten van leesbaarheid en het kunnen volgen van de flow van je code**.
+* Op het einde van de rit schreven we assembly-like code. Deze is héél expressief en zéér basic, waardoor het enorm moeilijk is om de algemene logica te (blijven) volgen.
+
 ## 3 - Competitive Programming
 
 > **!** De opdracht wordt/werd uitgevoerd tijdens het examenmoment.
