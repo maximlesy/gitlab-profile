@@ -54,8 +54,6 @@ Niet letterlijk natuurlijk, maar er is iets meer 'basic'.
 * `if ... else`, `for/while/..` zijn er voor het gemak. Je kan alles oplossen met `gotos`, maar dat gaat snel **ten kosten van leesbaarheid en het kunnen volgen van de flow van je code**.
 * Op het einde van de rit schreven we assembly-like code. Deze is héél expressief en zéér basic, waardoor het enorm moeilijk is om de algemene logica te (blijven) volgen.
 
-## Assembler and structured Programming
-
 ### Bronnen
 * [Use cl command on Windows](https://learn.microsoft.com/en-us/cpp/build/walkthrough-compile-a-c-program-on-the-command-line?view=msvc-170)
 * [Structured Programming](https://en.wikipedia.org/wiki/Structured_programming)
