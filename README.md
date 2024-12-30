@@ -54,6 +54,18 @@ Niet letterlijk natuurlijk, maar er is iets meer 'basic'.
 * `if ... else`, `for/while/..` zijn er voor het gemak. Je kan alles oplossen met `gotos`, maar dat gaat snel **ten kosten van leesbaarheid en het kunnen volgen van de flow van je code**.
 * Op het einde van de rit schreven we assembly-like code. Deze is héél expressief en zéér basic, waardoor het enorm moeilijk is om de algemene logica te (blijven) volgen.
 
+## Assembler and structured Programming
+
+### Bronnen
+* [Use cl command on Windows](https://learn.microsoft.com/en-us/cpp/build/walkthrough-compile-a-c-program-on-the-command-line?view=msvc-170)
+* [Structured Programming](https://en.wikipedia.org/wiki/Structured_programming)
+* [Difference between structured and unstructured programming](https://www.geeksforgeeks.org/difference-between-structured-and-unstructured-programming/)
+* [Swapping digits formula](https://stackoverflow.com/questions/74311104/given-a-two-digit-integer-swap-its-digits-and-print-the-result-python)
+* [Swapping digits alternative formula](https://codecrucks.com/program/program-to-swap-first-and-last-digit-of-a-number-using-while-loop/)
+* [Detecting (integer) overflow in C](https://stackoverflow.com/questions/55468823/how-to-detect-integer-overflow-in-c)
+* [long long](https://stackoverflow.com/questions/2550345/whats-the-difference-between-unsigned-long-long-int-in-c-c)
+* [redefinition; different basic types error](https://stackoverflow.com/questions/16424239/error-c2371-redefinition-different-basic-types-why)
+
 ## 3 - Competitive Programming
 
 > **!** De opdracht wordt/werd uitgevoerd tijdens het examenmoment.
