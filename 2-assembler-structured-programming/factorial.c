@@ -13,7 +13,7 @@ int main() {
     // n1 = input, n2 = factorial, n3 = loop counter
     n1 = read_int();
     n2 = 1;
-    n3 = 1;
+    n3 = 1; 
 
     test n1 < 0; 
     c_goto does_not_compute;
@@ -22,8 +22,19 @@ int main() {
 		test n3 > n1;
 		c_goto end_loop;
 
-		n2 *= n3;
+		//n2 *= n3;
+		int result = 0;
+		nx = n3;
+			while (nx > 0) {
+			result += n2;
+			nx--;
+		}
+
+		n2 = result;
+		write_str("n2 is ...");
+		write_int(n2);
 		n3++;
+
 		goto loop_start;
 
 	end_loop:
