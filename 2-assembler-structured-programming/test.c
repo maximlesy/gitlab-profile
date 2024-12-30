@@ -1,21 +1,41 @@
 #include "header.h"
 
-int main() {	
-	n1 = 1;
-	n2 = 2;
-	n3 = 4;
-	nx = 5;
+int main() {
 
-    write_int(n1);
-    write_int(n2);
-    write_int(n3);
-    write_int(nx);
+    // ERROR HERE:
+    // expected an expressionC/C++(29)
+    // #define push_lbl(l) push(&&l)
+    // Expands to:
+    // stack[stack_ptr++] = &&end
+    push_lbl(end);
+    
 
-    write_str("push 6 ... pop ... check nx (was 5)!");
-    push_int(6);
-    pop_int();
-    write_int(nx);
+    loop_start_push:
+            test n1 >= n2;
+            c_goto end_push;
 
-    return 0;
+            push_int(read_int());
+            n1++;
+            goto loop_start_push;
+
+    end_push:
+        write_str("Output:");
+        n1 = 0;
+
+    print:
+        write_str("print");
+        goto end;
+
+    loop_start_pop:
+        test n1 >= n2;
+        c_goto end;
+
+        pop_int();
+        write_int(nx);
+        n1++;
+        goto loop_start_pop;
+
+    end:
+        return 0;
 }
 
