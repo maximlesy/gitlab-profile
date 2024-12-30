@@ -22,18 +22,22 @@ int main() {
 		test n3 > n1; // count up to the factorial asked for
 		c_goto end_loop;
 
-		//n2 *= n3;
-
+		// n2 *= n3;
 		push_int(n3); // Putting n3 on stack because we want to use n3 for arithmetics (n3 = result)
 		nx = n3;
 		n3 = 0;
-			while (nx > 0) {
-			n3 += n2;
-			nx--;
-		}
 
+	loop_multiply:
+		test nx <= 0;
+		c_goto end_multiply;
+
+		n3 += n2;
+		nx--;
+		goto loop_multiply;
+
+	end_multiply:
 		n2 = n3;
-		
+
 		// restoring n3 from stack
 		nx = pop_int();
 		n3 = nx;
