@@ -26,9 +26,18 @@ Write a second version `fibFast` that uses a loop rather than recursion.
 
 */
 
-void fibFast() {
+int main() {
+    write_str("> Enter the n-th number you want of the Fibonnaci sequence. ");
+    write_str("> The sequence is:   0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...");
+    write_str("> The positions are: 0, 1, 2, 3, 4, 5, 6, 7,  8,  9,  10, 11, 12,  ...");
+
     nx = read_int(); // index that is wanted of the sequence
 
+    push_lbl(write_output);
+    pop_lbl();
+    goto *lx;
+
+    fibonacci:
     test (nx == 0 || nx == 1);
     c_goto write_output;
 
@@ -50,17 +59,7 @@ void fibFast() {
         nx = n2; // index becomes output: the Fibonacci sequence at that number
 
     write_output:
-        write_int(nx); 
-}
-
-int main() {
-    write_str("> Enter the n-th number you want of the Fibonnaci sequence. ");
-    write_str("> The sequence is:   0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...");
-    write_str("> The positions are: 0, 1, 2, 3, 4, 5, 6, 7,  8,  9,  10, 11, 12,  ...");
-
-    // nx acts as a double agent: it's the original input
-    // that is transformed into the output (the input is lost along the way)
-    fibFast();
+        write_int(nx);
 
     return 0;
 }
