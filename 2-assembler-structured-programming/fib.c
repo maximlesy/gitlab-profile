@@ -28,21 +28,26 @@ Write a second version `fibFast` that uses a loop rather than recursion.
 
 void fibFast() {
 
+    nx = read_int();
+
     test (nx == 0 || nx == 1);
-    c_goto method_end;
+    c_goto write_output;
 
     write_str("Calculating ...");
-    n1 = 0; //previous
-    n2 = 1; //current
-    //n3 will function as 'next';
-    for (int i = 2; i <= nx; i++) {
+    n1 = 0; // previous
+    n2 = 1; // current
+
+    while (nx >= 2) {
         n3 = n1 + n2;
         n1 = n2;
         n2 = n3;
+        nx--;
     }
 
-    method_end:
-        nx = n2;
+    nx = n2;
+
+    write_output:
+        write_int(nx);
 }
 
 int main() {
@@ -52,9 +57,7 @@ int main() {
 
     // nx acts as a double agent: it's the original input
     // that is transformed into the output (the input is lost along the way)
-    nx = read_int();
-    fibFast(); 
-    write_int(nx);
+    fibFast();
 
     return 0;
 }
