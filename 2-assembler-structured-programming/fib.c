@@ -27,8 +27,7 @@ Write a second version `fibFast` that uses a loop rather than recursion.
 */
 
 void fibFast() {
-
-    nx = read_int();
+    nx = read_int(); // index that is wanted of the sequence
 
     test (nx == 0 || nx == 1);
     c_goto write_output;
@@ -37,17 +36,21 @@ void fibFast() {
     n1 = 0; // previous
     n2 = 1; // current
 
-    while (nx >= 2) {
+    loop_start:
+        test (nx < 2);
+        c_goto end_loop;
+
         n3 = n1 + n2;
         n1 = n2;
         n2 = n3;
         nx--;
-    }
+        goto loop_start;
 
-    nx = n2;
+    end_loop:
+        nx = n2; // index becomes output: the Fibonacci sequence at that number
 
     write_output:
-        write_int(nx);
+        write_int(nx); 
 }
 
 int main() {
