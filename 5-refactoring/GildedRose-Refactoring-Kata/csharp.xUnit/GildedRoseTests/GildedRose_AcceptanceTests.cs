@@ -41,11 +41,12 @@ public class GildedRose_AcceptanceTests
         int expectedQuality = 0;
         int startQuality = 10;
         int startSellIn = 10;
+        int daysThatPass = 50; // way too many days pass (more than sell in) meaning the quality will be reduced to 0 or technically could go below 0
         Item item = new Item { Name = "Test", Quality = startQuality, SellIn = startSellIn };
 
         GildedRose sut = new GildedRose(new List<Item> { item });
 
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < daysThatPass; i++)
         {
             sut.UpdateQuality();
         }
@@ -73,5 +74,7 @@ public class GildedRose_AcceptanceTests
 
         Assert.Equal(expectedQuality, item.Quality);
     }
+
+
 
 }
