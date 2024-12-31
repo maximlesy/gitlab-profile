@@ -22,4 +22,16 @@
         <ProjectReference Include="..\GildedRose\GildedRose.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="GildedRose_AcceptanceTests.ThirtyDays.verified.txt">
+        <DependentUpon>GildedRose_AcceptanceTests.cs</DependentUpon>
+      </None>
+      <None Update="GildedRose_AcceptanceTests.Foo.verified.txt">
+        <DependentUpon>GildedRose_AcceptanceTests.cs</DependentUpon>
+      </None>
+      <None Update="GildedRose_AcceptanceTests.Foo.received.txt">
+        <DependentUpon>GildedRose_AcceptanceTests.cs</DependentUpon>
+      </None>
+    </ItemGroup>
+
 </Project>
