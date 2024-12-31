@@ -53,4 +53,25 @@ public class GildedRose_AcceptanceTests
         Assert.True(item.Quality >= 0);
     }
 
+    [Fact]
+    public void UpdateQuality_IncreasesQualityWhenItemIsAgedBrie()
+    {
+        int expectedQuality = 20;
+        int startQuality = 10;
+
+        int startSellIn = 10;
+        int daysThatPass = 10;
+
+        Item item = new Item { Name = "Aged Brie", Quality = startQuality, SellIn = startSellIn };
+
+        GildedRose sut = new GildedRose(new List<Item> { item });
+
+        for (int i = 0; i < daysThatPass; i++)
+        {
+            sut.UpdateQuality();
+        }
+
+        Assert.Equal(expectedQuality, item.Quality);
+    }
+
 }
