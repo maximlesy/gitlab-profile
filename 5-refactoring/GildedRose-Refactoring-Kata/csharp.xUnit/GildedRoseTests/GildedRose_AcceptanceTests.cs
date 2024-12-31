@@ -35,7 +35,7 @@ public class GildedRose_AcceptanceTests
     }
 
     [Fact]
-    // "The Quality of an item is never negative"
+    // The Quality of an item is never negative
     public void UpdateQuality_ShouldNotMakeQualityLowerThan0()
     {
         int expectedQuality = 0;
@@ -55,6 +55,27 @@ public class GildedRose_AcceptanceTests
     }
 
     [Fact]
+    // The Quality of an item is never more than 50
+    public void UpdateQuality_ShouldNeverMakeQualityHigherThan50()
+    {
+        int expectedQuality = 50;
+        int startQuality = 1;
+        int startSellIn = 1;
+        int daysThatPass = 100; // way too many days pass (more than sell in) meaning the quality will be reduced to 0 or technically could go below 0
+        Item item = new Item { Name = "Aged Brie", Quality = startQuality, SellIn = startSellIn };
+
+        GildedRose sut = new GildedRose(new List<Item> { item });
+
+        for (int i = 0; i < daysThatPass; i++)
+        {
+            sut.UpdateQuality();
+        }
+
+        Assert.Equal(expectedQuality, item.Quality);
+    }
+
+    [Fact]
+    // "Aged Brie" actually increases in Quality the older it gets
     public void UpdateQuality_IncreasesQualityWhenItemIsAgedBrie()
     {
         int expectedQuality = 20;
