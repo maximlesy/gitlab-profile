@@ -33,7 +33,7 @@ int main() {
 
     nx = read_int(); // index that is wanted of the sequence
 
-    push_lbl(write_output);
+    push_lbl(fibonacci);
     pop_lbl();
     goto *lx;
 
