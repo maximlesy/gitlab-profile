@@ -96,6 +96,29 @@ public class GildedRose_AcceptanceTests
         Assert.Equal(expectedQuality, item.Quality);
     }
 
+    [Fact]
+    // Once the sell by date has passed, Quality degrades twice as fast
+    public void UpdateQuality_DecreacesQuality2xWhenDateHasPassed()
+    {
+        //arrange
+        //expected: 10 - 1 - 2 - 2 - 2 = 3;
+        int sellIn = 1;
+        int startQuality = 10;
+        int daysThatPass = 4;
+        int expectedQuality = 3;
+        Item item = new Item { Name = "Test", Quality = startQuality, SellIn = sellIn };
+
+        //act
+        GildedRose sut = new GildedRose(new List<Item> { item });
+
+        for (int i = 0; i < daysThatPass; i++)
+        {
+            sut.UpdateQuality();
+        }
+
+        Assert.Equal(expectedQuality, item.Quality);
+    }
+
 
 
 }
