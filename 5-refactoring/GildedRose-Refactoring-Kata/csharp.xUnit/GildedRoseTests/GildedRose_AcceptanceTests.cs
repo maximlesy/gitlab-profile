@@ -54,24 +54,22 @@ public class GildedRose_AcceptanceTests
         Assert.True(item.Quality >= 0);
     }
 
-    [Fact]
-    // The Quality of an item is never more than 50
-    public void UpdateQuality_ShouldNeverMakeQualityHigherThan50()
+    [Fact] // The Quality of an item is never more than 50
+    public void UpdateQuality_Should_NeverMakeQualityHigherThan50()
     {
+        // arrange
         int expectedQuality = 50;
         int startQuality = 1;
         int startSellIn = 1;
         int daysThatPass = 100; // way too many days pass (more than sell in) meaning the quality will be reduced to 0 or technically could go below 0
-        Item item = new Item { Name = "Aged Brie", Quality = startQuality, SellIn = startSellIn };
+        Item maxQualityItem = CreateItem("Aged Brie", startQuality, startSellIn);
+        GildedRose sut = CreateGildedRose(maxQualityItem);
 
-        GildedRose sut = new GildedRose(new List<Item> { item });
+        // act
+        CycleDays(daysThatPass, sut);
 
-        for (int i = 0; i < daysThatPass; i++)
-        {
-            sut.UpdateQuality();
-        }
-
-        Assert.Equal(expectedQuality, item.Quality);
+        // assert
+        Assert.Equal(expectedQuality, maxQualityItem.Quality);
     }
 
     [Fact] // "Aged Brie" actually increases in Quality the older it gets
