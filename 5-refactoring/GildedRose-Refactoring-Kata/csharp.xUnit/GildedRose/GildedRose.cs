@@ -28,10 +28,7 @@ public class GildedRose
                 HandleQualityLogic(Items[i]);
             }
 
-            if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-            {
-                DecreaseSellIn(Items[i]);
-            }
+            DecreaseSellIn(Items[i]);
 
             if (Items[i].SellIn < 0)
             {
@@ -81,6 +78,7 @@ public class GildedRose
 
     private void HandleQualityLogic(Item item)
     {
+        
         if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
         {
             if (item.SellIn < 11)
