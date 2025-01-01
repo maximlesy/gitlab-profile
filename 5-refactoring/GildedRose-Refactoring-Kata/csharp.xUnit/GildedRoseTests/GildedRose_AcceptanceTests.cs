@@ -100,29 +100,26 @@ public class GildedRose_AcceptanceTests
     // Once the sell by date has passed, Quality degrades twice as fast
     public void UpdateQuality_DecreacesQuality2xWhenDateHasPassed()
     {
-        //arrange
-        //expected: 10 - 1 - 2 - 2 - 2 = 3;
+        // arrange
+        // expected: 10 - 1 - 2 - 2 - 2 = 3;
         int sellIn = 1;
         int startQuality = 10;
         int daysThatPass = 4;
         int expectedQuality = 3;
-        Item item = new Item { Name = "Test", Quality = startQuality, SellIn = sellIn };
+        Item item = CreateItem("Test", startQuality, sellIn);
+        GildedRose sut = CreateGildedRose(item);
 
-        //act
-        GildedRose sut = new GildedRose(new List<Item> { item });
+        // act
+        CycleDays(daysThatPass, sut);
 
-        for (int i = 0; i < daysThatPass; i++)
-        {
-            sut.UpdateQuality();
-        }
-
+        // assert
         Assert.Equal(expectedQuality, item.Quality);
     }
 
-    [Fact]
-    // "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
+    [Fact] // "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
     public void UpdateQuality_NeverDecreasesInQualityWhenItemIsLengendary()
     {
+        // Arrange
         int daysThatPass = 50,
             startQuality = 50,
             expectedQuality = 50;
@@ -130,8 +127,10 @@ public class GildedRose_AcceptanceTests
         Item legandaryItem = CreateItem("Sulfuras, Hand of Ragnaros", daysThatPass, startQuality);
         GildedRose sut = CreateGildedRose(legandaryItem);
 
+        // Act
         CycleDays(daysThatPass, sut);
 
+        // Assert
         Assert.Equal(expectedQuality, legandaryItem.Quality);
     }
 
