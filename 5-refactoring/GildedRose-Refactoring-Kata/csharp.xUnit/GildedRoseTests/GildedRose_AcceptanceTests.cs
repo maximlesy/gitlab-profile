@@ -34,23 +34,21 @@ public class GildedRose_AcceptanceTests
         Assert.Equal(expectedQuality, item.SellIn);
     }
 
-    [Fact]
-    // The Quality of an item is never negative
-    public void UpdateQuality_ShouldNotMakeQualityLowerThan0()
+    [Fact] // The Quality of an item is never negative
+    public void UpdateQuality_Should_NotMakeQualityLowerThan0()
     {
+        // arrange
         int expectedQuality = 0;
         int startQuality = 10;
         int startSellIn = 10;
-        int daysThatPass = 50; // way too many days pass (more than sell in) meaning the quality will be reduced to 0 or technically could go below 0
-        Item item = new Item { Name = "Test", Quality = startQuality, SellIn = startSellIn };
+        int daysThatPass = 50;
+        Item item = CreateItem("Test", startQuality, startSellIn);
+        GildedRose sut = CreateGildedRose(item);
 
-        GildedRose sut = new GildedRose(new List<Item> { item });
+        // act
+        CycleDays(daysThatPass, sut);
 
-        for (int i = 0; i < daysThatPass; i++)
-        {
-            sut.UpdateQuality();
-        }
-
+        // assert
         Assert.True(item.Quality >= 0);
     }
 
@@ -61,7 +59,7 @@ public class GildedRose_AcceptanceTests
         int expectedQuality = 50;
         int startQuality = 1;
         int startSellIn = 1;
-        int daysThatPass = 100; // way too many days pass (more than sell in) meaning the quality will be reduced to 0 or technically could go below 0
+        int daysThatPass = 100;
         Item maxQualityItem = CreateItem("Aged Brie", startQuality, startSellIn);
         GildedRose sut = CreateGildedRose(maxQualityItem);
 
