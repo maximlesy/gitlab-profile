@@ -171,6 +171,24 @@ public class GildedRose_AcceptanceTests
         Assert.Equal(expectedQuality, backstagePass.Quality);
     }
 
+    [Fact] // Backstage pass quality drops to 0 after the concert
+    public void UpdateQuality_ShouldDropQualityTo0_WhenSellInDateHasPassed()
+    {
+        // arrange
+        int startQuality = 10;
+        int startSellIn = 0;
+        int daysThatPass = 1;
+        int expectedQuality = 0;
+        Item backstagePass = CreateItem("Backstage passes to a TAFKAL80ETC concert", startQuality, startSellIn);
+        GildedRose sut = CreateGildedRose(backstagePass);
+
+        // act
+        CycleDays(daysThatPass, sut);
+
+        // assert
+        Assert.Equal(expectedQuality, backstagePass.Quality);
+    }
+
     private static GildedRose CreateGildedRose(params Item[] items)
     {
         return new GildedRose(CreateItemList(items));
