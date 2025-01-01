@@ -37,14 +37,8 @@ public class GildedRose
             {
                 if (Items[i].Name != "Aged Brie")
                 {
-                    if (Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
-                    {
-                        DecreaseQuality(Items[i]);
-                    }
-                    else
-                    {
-                        HandleQualityLogic(Items[i]);
-                    }
+                    DecreaseQuality(Items[i]);
+                    HandleQualityLogic(Items[i]);
                 }
                 else
                 {
