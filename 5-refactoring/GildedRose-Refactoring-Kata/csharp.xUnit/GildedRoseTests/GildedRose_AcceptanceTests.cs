@@ -119,6 +119,25 @@ public class GildedRose_AcceptanceTests
         Assert.Equal(expectedQuality, item.Quality);
     }
 
+    [Fact]
+    // "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
+    public void UpdateQuality_NeverDecreasesInQualityWhenItemIsLengendary()
+    {
+        int daysThatPass = 50,
+            startQuality = 50,
+            expectedQuality = 50;
+
+        Item legandaryItem = new Item { Name = "Sulfuras, Hand of Ragnaros", Quality = startQuality, SellIn = daysThatPass };
+
+        GildedRose sut = new GildedRose(new List<Item> { legandaryItem });
+        for(int i = 0; i < daysThatPass; i++)
+        {
+            sut.UpdateQuality();
+        }
+
+        Assert.Equal(expectedQuality, legandaryItem.Quality);
+    }
+
 
 
 }
