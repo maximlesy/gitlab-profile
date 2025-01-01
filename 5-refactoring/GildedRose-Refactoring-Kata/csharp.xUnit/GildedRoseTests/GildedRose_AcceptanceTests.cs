@@ -75,7 +75,7 @@ public class GildedRose_AcceptanceTests
     }
 
     [Fact] // "Aged Brie" actually increases in Quality the older it gets
-    public void UpdateQuality_IncreasesQualityWhenItemIsAgedBrie()
+    public void UpdateQuality_ShouldIncreaseQuality_WhenItemIsAgedBrie()
     {
         // arrange
         int expectedQuality = 20;
