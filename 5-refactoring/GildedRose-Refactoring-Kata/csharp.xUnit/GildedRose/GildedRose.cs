@@ -17,12 +17,9 @@ public class GildedRose
         {
             if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
             {
-                if (Items[i].Quality > 0)
+                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
                 {
-                    if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                    {
-                        DecreaseQuality(Items[i]);
-                    }
+                    DecreaseQuality(Items[i]);
                 }
             }
             else
