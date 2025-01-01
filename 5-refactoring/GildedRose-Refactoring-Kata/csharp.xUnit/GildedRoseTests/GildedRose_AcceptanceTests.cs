@@ -20,17 +20,19 @@ public class GildedRose_AcceptanceTests
         Assert.Equal(expectedSellIn, item.SellIn);
     }
 
-    [Fact]
-    // At the end of each day our system lowers Quality for every item
-    public void UpdateQuality_Should_ReduceItemQualityTo9WhenInitializedAs10()
+    [Fact] // At the end of each day our system lowers Quality for every item
+    public void UpdateQuality_ShouldReduceItemQualityTo9_WhenInitializedAs10()
     {
+        // arrange
         int startQuality = 10;
         int expectedQuality = 9;
-        Item item = new Item { Name = "Test", Quality = startQuality, SellIn = 10 };
+        Item item = CreateItem("Test", startQuality, 10);
+        GildedRose sut = CreateGildedRose(item);
 
-        GildedRose sut = new GildedRose(new List<Item> { item });
+        // act
         sut.UpdateQuality();
 
+        // assert
         Assert.Equal(expectedQuality, item.SellIn);
     }
 
