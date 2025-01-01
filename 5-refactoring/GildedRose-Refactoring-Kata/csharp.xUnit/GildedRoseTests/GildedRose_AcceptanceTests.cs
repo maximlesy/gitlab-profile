@@ -74,34 +74,30 @@ public class GildedRose_AcceptanceTests
         Assert.Equal(expectedQuality, item.Quality);
     }
 
-    [Fact]
-    // "Aged Brie" actually increases in Quality the older it gets
+    [Fact] // "Aged Brie" actually increases in Quality the older it gets
     public void UpdateQuality_IncreasesQualityWhenItemIsAgedBrie()
     {
+        // arrange
         int expectedQuality = 20;
         int startQuality = 10;
 
         int startSellIn = 10;
         int daysThatPass = 10;
 
-        Item item = new Item { Name = "Aged Brie", Quality = startQuality, SellIn = startSellIn };
+        Item agedBrie = CreateItem("Aged Brie", startQuality, startSellIn);
+        GildedRose sut = CreateGildedRose(agedBrie);
 
-        GildedRose sut = new GildedRose(new List<Item> { item });
+        // act
+        CycleDays(daysThatPass, sut);
 
-        for (int i = 0; i < daysThatPass; i++)
-        {
-            sut.UpdateQuality();
-        }
-
-        Assert.Equal(expectedQuality, item.Quality);
+        //assert
+        Assert.Equal(expectedQuality, agedBrie.Quality);
     }
 
-    [Fact]
-    // Once the sell by date has passed, Quality degrades twice as fast
-    public void UpdateQuality_DecreacesQuality2xWhenDateHasPassed()
+    [Fact] // Once the sell by date has passed, Quality degrades twice as fast
+    public void UpdateQuality_ShouldDecreacesQuality2x_WhenSellInDateHasPassed()
     {
         // arrange
-        // expected: 10 - 1 - 2 - 2 - 2 = 3;
         int sellIn = 1;
         int startQuality = 10;
         int daysThatPass = 4;
@@ -113,11 +109,12 @@ public class GildedRose_AcceptanceTests
         CycleDays(daysThatPass, sut);
 
         // assert
+        // expected: 10 - 1 - 2 - 2 - 2 = 3;
         Assert.Equal(expectedQuality, item.Quality);
     }
 
     [Fact] // "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
-    public void UpdateQuality_NeverDecreasesInQualityWhenItemIsLengendary()
+    public void UpdateQuality_ShouldNeverDecreaseQuality_WhenItemIsLengendary()
     {
         // Arrange
         int daysThatPass = 50,
