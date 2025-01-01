@@ -15,6 +15,9 @@ public class GildedRose
     {
         for (var i = 0; i < Items.Count; i++)
         {
+
+            DecreaseSellIn(Items[i]);
+
             if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
             {
                 if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
@@ -28,7 +31,7 @@ public class GildedRose
                 HandleQualityLogic(Items[i]);
             }
 
-            DecreaseSellIn(Items[i]);
+             
 
             if (Items[i].SellIn < 0)
             {
@@ -81,12 +84,12 @@ public class GildedRose
         
         if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
         {
-            if (item.SellIn < 11)
+            if (item.SellIn < 10)
             {
                 IncreaseQuality(item);
             }
 
-            if (item.SellIn < 6)
+            if (item.SellIn < 5)
             {
                 IncreaseQuality(item);
             }
