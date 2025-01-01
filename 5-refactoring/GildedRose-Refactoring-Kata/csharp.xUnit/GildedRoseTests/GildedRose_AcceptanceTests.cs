@@ -127,17 +127,34 @@ public class GildedRose_AcceptanceTests
             startQuality = 50,
             expectedQuality = 50;
 
-        Item legandaryItem = new Item { Name = "Sulfuras, Hand of Ragnaros", Quality = startQuality, SellIn = daysThatPass };
+        Item legandaryItem = CreateItem("Sulfuras, Hand of Ragnaros", daysThatPass, startQuality);
+        GildedRose sut = CreateGildedRose(legandaryItem);
 
-        GildedRose sut = new GildedRose(new List<Item> { legandaryItem });
-        for(int i = 0; i < daysThatPass; i++)
-        {
-            sut.UpdateQuality();
-        }
+        CycleDays(daysThatPass, sut);
 
         Assert.Equal(expectedQuality, legandaryItem.Quality);
     }
 
+    private static GildedRose CreateGildedRose(params Item[] items)
+    {
+        return new GildedRose(CreateItemList(items));
+    }
 
+    private static List<Item> CreateItemList(params Item[] items)
+    {
+        return new List<Item>(items);
+    }
 
+    private static Item CreateItem(string name, int quality, int sellIn)
+    {
+        return new Item { Name = name, Quality = quality, SellIn = sellIn };
+    }
+
+    private static void CycleDays(int daysThatPass, GildedRose sut)
+    {
+        for (int i = 0; i < daysThatPass; i++)
+        {
+            sut.UpdateQuality();
+        }
+    }
 }
