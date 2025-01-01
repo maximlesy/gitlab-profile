@@ -6,17 +6,19 @@ namespace GildedRoseTests;
 
 public class GildedRose_AcceptanceTests
 {
-    [Fact]
-    // At the end of each day our system lowers SellIn for every item
-    public void UpdateQuality_Should_ReduceItemSellInTo9WhenInitializedAs10()
+    [Fact] // At the end of each day our system lowers SellIn for every item
+    public void UpdateQuality_ShouldReduceItemSellInTo9_WhenInitializedAs10()
     {
+        // arrange
         int startSellIn = 10;
         int expectedSellIn = 9;
-        Item item = new Item { Name = "Test", Quality = 10, SellIn = startSellIn };
-        
-        GildedRose sut = new GildedRose(new List<Item> { item });
+        Item item = CreateItem("Test", 10, startSellIn);
+        GildedRose sut = CreateGildedRose(item);
+
+        // act
         sut.UpdateQuality();
 
+        // assert
         Assert.Equal(expectedSellIn, item.SellIn);
     }
 
