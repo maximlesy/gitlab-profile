@@ -23,6 +23,7 @@ public class GildedRose
                 {
                     DecreaseQuality(Items[i]);
                 }
+                HandleQualityLogic(Items[i]);
             }
             else
             {
@@ -42,8 +43,7 @@ public class GildedRose
                     }
                     else
                     {
-                        // Quality drops to 0 after the concert
-                        Items[i].Quality = Items[i].Quality - Items[i].Quality;
+                        HandleQualityLogic(Items[i]);
                     }
                 }
                 else
@@ -90,6 +90,14 @@ public class GildedRose
             if (item.SellIn < 5)
             {
                 IncreaseQuality(item);
+            }
+        }
+
+        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+        {
+            if (item.SellIn < 0)
+            {
+                item.Quality = 0;
             }
         }
     }
