@@ -29,7 +29,7 @@ public class GildedRose
             {
                 if (Items[i].Quality < 50)
                 {
-                    Items[i].Quality = Items[i].Quality + 1;
+                    IncreaseQuality(Items[i]);
 
                     if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
                     {
