@@ -35,14 +35,14 @@ public class GildedRose
 
             if (Items[i].SellIn < 0)
             {
-                if (Items[i].Name != "Aged Brie")
+                if (Items[i].Name == "Aged Brie")
                 {
-                    DecreaseQuality(Items[i]);
-                    HandleQualityLogic(Items[i]);
+                    IncreaseQuality(Items[i]);                   
                 }
                 else
                 {
-                    IncreaseQuality(Items[i]);
+                    DecreaseQuality(Items[i]);
+                    HandleQualityLogic(Items[i]);
                 }
             }
         }
