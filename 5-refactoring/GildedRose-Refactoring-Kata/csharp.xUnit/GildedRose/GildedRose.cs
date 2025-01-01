@@ -67,6 +67,7 @@ public class GildedRose
                     }
                     else
                     {
+                        // Quality drops to 0 after the concert
                         Items[i].Quality = Items[i].Quality - Items[i].Quality;
                     }
                 }
