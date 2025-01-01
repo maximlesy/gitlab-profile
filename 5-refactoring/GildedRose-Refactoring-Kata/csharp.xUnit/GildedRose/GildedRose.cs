@@ -25,19 +25,7 @@ public class GildedRose
             else
             {
                 IncreaseQuality(Items[i]);
-
-                if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    if (Items[i].SellIn < 11)
-                    {
-                        IncreaseQuality(Items[i]);
-                    }
-
-                    if (Items[i].SellIn < 6)
-                    {
-                        IncreaseQuality(Items[i]);
-                    }
-                }
+                HandleQualityLogic(Items[i]);
             }
 
             if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
@@ -89,5 +77,21 @@ public class GildedRose
     private void DecreaseSellIn(Item item)
     {
         item.SellIn--;
+    }
+
+    private void HandleQualityLogic(Item item)
+    {
+        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+        {
+            if (item.SellIn < 11)
+            {
+                IncreaseQuality(item);
+            }
+
+            if (item.SellIn < 6)
+            {
+                IncreaseQuality(item);
+            }
+        }
     }
 }
