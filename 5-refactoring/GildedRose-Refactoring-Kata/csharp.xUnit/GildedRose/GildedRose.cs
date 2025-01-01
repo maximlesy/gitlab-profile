@@ -17,18 +17,19 @@ public class GildedRose
         {
             DecreaseSellIn(Items[i]);
 
-            if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
+            if (Items[i].Name == "Aged Brie" || Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+            {
+                IncreaseQuality(Items[i]);
+                HandleQualityLogic(Items[i]);
+            }
+            else
             {
                 if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
                 {
                     DecreaseQuality(Items[i]);
                 }
                 HandleQualityLogic(Items[i]);
-            }
-            else
-            {
-                IncreaseQuality(Items[i]);
-                HandleQualityLogic(Items[i]);
+                
             }
 
              
