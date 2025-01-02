@@ -6,12 +6,12 @@ namespace GildedRoseKata;
 public class GildedRose
 {
     private IList<Item> items;
-    private IItemUpdater itemUpdater;
+    private readonly IItemUpdater itemUpdater;
 
-    public GildedRose(IList<Item> items)
+    public GildedRose(IList<Item> items, IItemUpdater itemUpdater)
     {
         this.items = items;
-        itemUpdater = new ItemUpdater();
+        this.itemUpdater = itemUpdater;
     }
 
     public void UpdateQuality()

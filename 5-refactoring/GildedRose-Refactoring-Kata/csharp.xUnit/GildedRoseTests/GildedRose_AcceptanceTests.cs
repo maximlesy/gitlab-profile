@@ -1,4 +1,5 @@
 ﻿using GildedRoseKata;
+using GildedRoseKata.Strategies.Interfaces;
 using System.Collections.Generic;
 using Xunit;
 
@@ -42,7 +43,6 @@ public class GildedRose_AcceptanceTests
     public void UpdateQuality_Should_NotMakeQualityLowerThan0()
     {
         // arrange
-        int expectedQuality = 0;
         int startQuality = 10;
         int startSellIn = 10;
         int daysThatPass = 50;
@@ -191,7 +191,7 @@ public class GildedRose_AcceptanceTests
 
     private static GildedRose CreateGildedRose(params Item[] items)
     {
-        return new GildedRose(CreateItemList(items));
+        return new GildedRose(CreateItemList(items), new ItemUpdater()); // to do: should be mocked
     }
 
     private static List<Item> CreateItemList(params Item[] items)
