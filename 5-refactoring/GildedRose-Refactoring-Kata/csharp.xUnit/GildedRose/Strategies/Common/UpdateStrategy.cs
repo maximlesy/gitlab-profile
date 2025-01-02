@@ -9,11 +9,17 @@ namespace GildedRoseKata.Strategies.Shared
             item.SellIn--;
         }
 
-        public virtual void IncreaseQuality(Item item)
-        {
-            if (item.Quality < 50)
+        public virtual void IncreaseQuality(Item item, int increment = 1)
+        {           
+            int updatedQuality = item.Quality + increment;
+
+            if (updatedQuality < 50)
             {
-                item.Quality++;
+                item.Quality = updatedQuality;
+            }
+            else 
+            { 
+                item.Quality = 50; 
             }
         }
 

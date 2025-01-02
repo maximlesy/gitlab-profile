@@ -1,10 +1,5 @@
 ﻿using GildedRoseKata.Strategies.Interfaces;
 using GildedRoseKata.Strategies.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GildedRoseKata.Strategies
 {
@@ -14,22 +9,38 @@ namespace GildedRoseKata.Strategies
         {
             base.DecreaseSellIn(item);
 
-            IncreaseQuality(item);
+            IncreaseQualityBasedOnConcertProximity(item);
+            DropQualityToZeroIfConcertIsOver(item);
+        }
 
-            if (item.SellIn < 10)
+        private void IncreaseQualityBasedOnConcertProximity(Item item)
+        {
+            if(ConcertIsBetween5And10DaysAway(item))
             {
-                IncreaseQuality(item);
+                IncreaseQuality(item, 2);
             }
-
-            if (item.SellIn < 5)
+            else if (ConcertIsLessThan5DaysAway(item))
             {
-                IncreaseQuality(item);
+                IncreaseQuality(item, 3);
             }
+        }
 
+        private void DropQualityToZeroIfConcertIsOver(Item item)
+        {
             if (item.SellIn < 0)
             {
                 item.Quality = 0;
             }
+        }
+
+        private bool ConcertIsBetween5And10DaysAway(Item item)
+        {
+            return item.SellIn < 10 && item.SellIn >= 5;
+        }
+
+        private bool ConcertIsLessThan5DaysAway(Item item)
+        {
+            return item.SellIn < 5;
         }
     }
 }
