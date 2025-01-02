@@ -5,18 +5,18 @@ namespace GildedRoseKata;
 
 public class GildedRose
 {
-    IList<Item> Items;
-    IItemUpdater itemUpdater;
+    private IList<Item> items;
+    private IItemUpdater itemUpdater;
 
-    public GildedRose(IList<Item> Items)
+    public GildedRose(IList<Item> items)
     {
-        this.Items = Items;
+        this.items = items;
         itemUpdater = new ItemUpdater();
     }
 
     public void UpdateQuality()
     {
-        foreach (var item in Items)
+        foreach (var item in items)
         {
             itemUpdater.UpdateItem(item);
         }
