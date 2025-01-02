@@ -23,11 +23,17 @@ namespace GildedRoseKata.Strategies.Shared
             }
         }
 
-        public virtual void DecreaseQuality(Item item)
+        public virtual void DecreaseQuality(Item item, int decrement = 1)
         {
-            if (item.Quality > 0)
+            int updatedQuality = item.Quality - decrement;
+
+            if (updatedQuality > 0)
             {
-                item.Quality--;
+                item.Quality = updatedQuality;
+            }
+            else
+            {
+                item.Quality = 0;
             }
 
             DecreaseQualityExtraIfSellInHasPassed(item);

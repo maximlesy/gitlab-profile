@@ -12,6 +12,7 @@ namespace GildedRoseKata.Factories
                 "Sulfuras, Hand of Ragnaros" => new SulfurasUpdateStrategy(),
                 "Aged Brie" => new AgedBrieUpdateStrategy(),
                 "Backstage passes to a TAFKAL80ETC concert" => new BackstagePassUpdateStrategy(),
+                _ when itemName.StartsWith("Conjured") => new ConjuredItemStrategy(),
                 _ => new DefaultUpdateStrategy(),
             };
         }
