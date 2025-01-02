@@ -2,7 +2,7 @@
 
 ## 1 - Test Driven Development (TDD)
 
-### Reflectie
+### Retrospective
 
 * Het is **moeilijk om te bepalen wat de belangrijkste tests is** om éérst onder handen te nemen. Door tijdens het ontwikkelproces soms een misse keuze gemaakt te hebben, is de code bombatischer is geworden dan werkelijk nodig, waardoor er nadien **meer tijd kruipt in het refactoren**. Niettegenstaande ben je wel **zeker dat je code correct functioneert**.
 * Sommige tests kunnen uitgebreid worden (bv. met parameters): het is een **moeilijke balans tussen één test voorzien of meerdere tests** schrijven.
@@ -11,7 +11,20 @@
 * Terzelfdertijd bedenk ik me wel: is hier in een bedrijfcontext tijd en kapitaal voor? Misschien wel, op voorwaarde dat TDD sterkt geïncorporeerd zit in de mentaliteit van het team?
 * Het strikt volgen van de Red - Green - (Refactor) stappen is een ideologie; niet iets wat je altijd in de praktijk om kan zetten. Wat indien een test onmiddellijk slaagt, bijvoorbeeld? Dan kan je niet starten met een 'red', dus moet je onmiddellijk schakelen naar 'green'?
 
-> **Eindverdict:** De code die ik gaandeweg schreef is geenszins de code die ik standaard zou schrijven. Het eindresultaat is helemaal anders uitgedraaid dan mijn standaard stijl. Dit hoeft geen slecht gegeven te zijn: de code is getest en bevat tests die mogelijke refactors en de tand des tijds kunnen doorstaan en kunnen blijven dienen. In de huidige code base is verder refactoren zeker nog aan de orde.
+### Wat zou je beter doen in een tweede iteratie?
+Ik heb me te strikt laten leiden door Uncle Bob's advies uit de video om "zo lang als mogelijk te wachten met bijsturen". Zijn advies had ik daar meer met een korreltje zout moeten nemen, want nu heb ik té lang gewacht.
+Door te lang te wachten werd het refactorwerk op het einde van de rit plots te groot. Had ik gaandeweg wél de aanpassingen gemaakt die ik wou doen (want die heb ik niet gedaan omwille van het advies), dan zou ik stukken vlotter tot het eindresultaat gekomen zijn.
+Graag merk ik ook wel nog op dat ik Uncle Bob niet wil tegenspreken in zijn advies, maar misschien moeten we gewoon even beklemtonen dat hij allicht net ietsje overdreef in zijn video om een punt te kunnen maken voor de demo (in een klein project).
+
+In een komende iteratie moet ik ook zorgvuldiger de belangrijkste tests weten te onderscheiden van de detailtests. Ik startte de opdracht met het idee om dat te doen, maar dat bleek uiteindelijke moeilijker dan verwacht.
+
+Tot slot geef ik graag mee dat ik in een volgend project graag standaard TDD toepas omwille van de gerustheid die het je geeft: je weet dat de code werkt zoals je zelf hebt vooropgesteld én het is stukken moeilijker om nieuwe bugs te introduceren.
+Nu, die gerustheid is natuurlijk ook maar zo goed als de tests die je zelf schreef en weet te coveren. In het bestaande project zijn er allicht nog een aantal edge cases die niét gecovered zijn. Het spreek voor zich dat deze geen 'red test' zullen opleveren; de test is
+niet geschreven. Dit laatste duidt dan weer op het aandachtig moeten zijn om 'volledige' tests uit te schrijven die zo veel mogelijk scenario's aftoetsen.
+
+> **Eindverdict:** De code die ik gaandeweg schreef is geenszins de code die ik standaard zou schrijven. 
+Het eindresultaat is helemaal anders uitgedraaid dan mijn standaard stijl. Dit hoeft geen slecht gegeven te zijn: de code is getest en bevat tests die mogelijke nieuwe refactors en de tand des tijds kunnen doorstaan. 
+Tot slot is het relavnt om op te merken dat het zeker relevant kan zijn om de huidige code base nog verder te refactoren.
 
 ### Checklist
 |Programming Boundary|Test(s) available that prove this|
