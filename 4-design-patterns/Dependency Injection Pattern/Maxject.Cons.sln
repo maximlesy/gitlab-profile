@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxject.Cons", "Maxject.Cons\Maxject.Cons.csproj", "{4630068F-D0BE-4825-9CC2-59B25C8E5113}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxject.Core", "Maxject.Core\Maxject.Core.csproj", "{6BFEA741-6DE0-455A-A644-60024A372D55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4630068F-D0BE-4825-9CC2-59B25C8E5113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4630068F-D0BE-4825-9CC2-59B25C8E5113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4630068F-D0BE-4825-9CC2-59B25C8E5113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4630068F-D0BE-4825-9CC2-59B25C8E5113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BFEA741-6DE0-455A-A644-60024A372D55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BFEA741-6DE0-455A-A644-60024A372D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BFEA741-6DE0-455A-A644-60024A372D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BFEA741-6DE0-455A-A644-60024A372D55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25062786-8952-4CD6-BB80-EF1649BD95BA}
+	EndGlobalSection
+EndGlobal
