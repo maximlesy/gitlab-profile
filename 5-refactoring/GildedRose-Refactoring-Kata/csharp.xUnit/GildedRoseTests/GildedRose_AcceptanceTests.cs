@@ -189,6 +189,23 @@ public class GildedRose_AcceptanceTests
         Assert.Equal(expectedQuality, backstagePass.Quality);
     }
 
+    [Fact]
+    public void UpdateQuality_ShouldDecreaseQuality2x_WhenItemIsConjured()
+    {
+        // arrange
+        int startQuality = 3;
+        int expectedEndQuality = 1;
+        int daysThatPass = 1;
+        Item conjuredItem = CreateItem("Conjured Mana Cake", 3, 6);
+        GildedRose gildedRose = CreateGildedRose(conjuredItem);
+
+        // act
+        CycleDays(daysThatPass, gildedRose);
+
+        // assert
+        Assert.Equal(expectedEndQuality, conjuredItem.Quality);
+    }
+
     private static GildedRose CreateGildedRose(params Item[] items)
     {
         return new GildedRose(CreateItemList(items), new ItemUpdater()); // to do: should be mocked
