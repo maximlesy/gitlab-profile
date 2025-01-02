@@ -20,30 +20,8 @@ public class GildedRose
         }
     }
 
-    private void IncreaseQuality(Item item)
-    {
-        if (item.Quality < 50)
-        {
-            item.Quality++;
-        }
-    }
-
-    private void DecreaseQuality(Item item)
-    {
-        if (item.Quality > 0)
-        {
-            item.Quality--;
-        }
-    }
-
-    private void DecreaseSellIn(Item item)
-    {
-        item.SellIn--;
-    }
-
     private void HandleQualityLogic(Item item)
     {
-
         if (item.Name == "Sulfuras, Hand of Ragnaros") return;
 
         if (item.SellIn < 0)
@@ -55,14 +33,12 @@ public class GildedRose
             else
             {
                 DecreaseQuality(item);
-                HandleQualityLogic(item);
             }
         }
 
         if (item.Name == "Aged Brie" || item.Name == "Backstage passes to a TAFKAL80ETC concert")
         {
             IncreaseQuality(item);
-            HandleQualityLogic(item);
         }
         else
         {
@@ -70,8 +46,6 @@ public class GildedRose
             {
                 DecreaseQuality(item);
             }
-            HandleQualityLogic(item);
-
         }
 
         if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
@@ -91,6 +65,26 @@ public class GildedRose
                 item.Quality = 0;
             }
         }
+    }
 
+    private void IncreaseQuality(Item item)
+    {
+        if (item.Quality < 50)
+        {
+            item.Quality++;
+        }
+    }
+
+    private void DecreaseQuality(Item item)
+    {
+        if (item.Quality > 0)
+        {
+            item.Quality--;
+        }
+    }
+
+    private void DecreaseSellIn(Item item)
+    {
+        item.SellIn--;
     }
 }
