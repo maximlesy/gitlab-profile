@@ -69,9 +69,15 @@ Niet letterlijk natuurlijk, maar er is iets meer 'basic'.
 > **!** De opdracht wordt/werd uitgevoerd tijdens het examenmoment.
 > Reden: werkstudent
 
-## 5 - Refactoring
+## 4 - Design Patterns
+
+### Strategy & Factory pattern
+Voor de opdracht 'Refactoring' werd het het Strategy pattern & het factory pattern toegepast. Zie daarvoor ook de uitwerking van de Gilded Rose.
 
 ### Bronnen
 * [Strategy pattern](https://refactoring.guru/design-patterns/strategy)
 * [Factory pattern](https://refactoring.guru/design-patterns/factory-method)
+
+## 5 - Refactoring
+
 
