@@ -50,13 +50,13 @@ Tot slot is het relavnt om op te merken dat het zeker relevant kan zijn om de hu
 
 ## 2 - Assembly & Structured Programming
 
-### Reflectie
+### Retrospective
 Initieel zag ik niet in waarom dit hoofdstuk 'assembly' én 'structured programming' heette.
 Gaandeweg werd me dit echter helemaal duidelijk: we maakten een vertaalslag van de programmeerstijl die we gewend zijn en 
 waar we van houden (en die bovendien quasi standaard 'structured' is?) naar een vorm van assembly code die telkens meer en meer 'unstructured' werd (lees: minder leesbaar),
 maar natuurlijk wel nog steeds is (lees: neigt) naar machinecode.
 
-De belangrijkste zaken die ik opstak uit deze opdracht zijn:
+#### De belangrijkste zaken die ik opstak uit deze opdracht zijn:
 * **Alternatief nadenken over oplossingen** met sterke restricties (nl. het beperken van variabelen)
 * Indien de beperking niet vol te houden is was het fijn om de werking van een **eigen soort stack te zien en de overhead die daarbij komt kijken**
 * Moderne programmeertalen bevatten veel **syntatic sugar**: heel concreet heeft in deze opdracht een `for` lus gebruiken een nadelen omdat het nood heeft aan een extra teller,
@@ -66,6 +66,22 @@ je kan wel berusten op constanten ipv. variabelen.
 Niet letterlijk natuurlijk, maar er is iets meer 'basic'.
 * `if ... else`, `for/while/..` zijn er voor het gemak. Je kan alles oplossen met `gotos`, maar dat gaat snel **ten kosten van leesbaarheid en het kunnen volgen van de flow van je code**.
 * Op het einde van de rit schreven we assembly-like code. Deze is héél expressief en zéér basic, waardoor het enorm moeilijk is om de algemene logica te (blijven) volgen.
+
+
+#### Hoe ging ik te werk?
+* Ik probeerde steeds eerst een uitwerking te schrijven die geen nood had aan de push_stack() methode, dit om me te kunnen redden met de bestaande n1, n2 en n3 variabelen die volledig als stand-alone kunnen dienen.
+* Op termijn was dit echter niet houdbaar, waardoor ik een strategie toepaste richtig functioneel programmeren: de input variabele kon/mocht veranderen op voorwaarde dat de input op het einde van de rit de output bevatte.
+Hierdoor creëerde is als het ware tóch een n4 variabele. Reden om dit te doen was om `nx` te kunnen vermijden omwille van de 'wispelturigheid' na een pop.
+* Eenmaal toegekomen bij het verwijderen van de `*`, `/` en `%` werkte bovenstaande strategie niet meer en moet er toch een manier gevonden worden om de variabelen te laten 'dansen' door op kritische plaatsen te pushen en poppen.
+Zodat de nodige waardes teruggestopt konden worden in de juiste variabelen (n1, n2, n3). De reden om toch de push/pop methodes te moeten gebruiken was omwille van de nood aan een teller die niet meer tegewezen kon worden aan de inmiddels
+'fixed' `n1`, `n2` en `n3`.
+* Tot het gebruik van de `gotos` kan je je programma nog vrij liniair lezen indien je "meespringt" (statements worden sequentieel uitgevoerd tenzij je versprongen bent). Vanaf het verwijderen van `*`, `/` en `%` werd dit springen echter een 
+**mentale overhead en werd de code te** ***unstructured***. Omwille van die reden introduceerde ik weer lussen (doorgaans en `while`) om deze pas daarna terug te vertalen naar `gotos` e.d.
+
+#### Waar liep je vast?
+Ik heb nergens echt vast gelopen; maar beschouwde deze opdracht eerste als een uitdaging. Waar is dus op vast liep, lees je hierboven al, maar dat heb ik niet beschouwd als 'vastlopen'.
+Ik liep wél vast op het kunnen compileren van de laatste stap, daar kreeg ik errors die te maken hadden met de soort compiler. Ik gebruikte `cl` om te compileren, maar enkel `gcc` kon de
+`push_label()` code compileren.
 
 ### Bronnen
 * [Use cl command on Windows](https://learn.microsoft.com/en-us/cpp/build/walkthrough-compile-a-c-program-on-the-command-line?view=msvc-170)
