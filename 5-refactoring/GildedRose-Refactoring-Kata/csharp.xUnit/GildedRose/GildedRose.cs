@@ -24,13 +24,7 @@ public class GildedRose
 
     private void HandleQualityLogic(Item item)
     {
-        if (item.Name == "Sulfuras, Hand of Ragnaros") 
-        {
-            itemUpdater.UpdateItem(item);
-            return;
-        }
-        
-        DecreaseSellIn(item);
+        itemUpdater.UpdateItem(item);
 
 
         if (item.SellIn < 0)
