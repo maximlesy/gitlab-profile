@@ -1,14 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using GildedRoseKata.Strategies.Interfaces;
+using System.Collections.Generic;
 
 namespace GildedRoseKata;
 
 public class GildedRose
 {
     IList<Item> Items;
+    IItemUpdater itemUpdater;
 
     public GildedRose(IList<Item> Items)
     {
         this.Items = Items;
+        itemUpdater = new ItemUpdater();
     }
 
     public void UpdateQuality()
@@ -21,9 +24,14 @@ public class GildedRose
 
     private void HandleQualityLogic(Item item)
     {
+        if (item.Name == "Sulfuras, Hand of Ragnaros") 
+        {
+            itemUpdater.UpdateItem(item);
+            return;
+        }
+        
         DecreaseSellIn(item);
 
-        if (item.Name == "Sulfuras, Hand of Ragnaros") return;
 
         if (item.SellIn < 0)
         {

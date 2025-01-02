@@ -68,3 +68,10 @@ Niet letterlijk natuurlijk, maar er is iets meer 'basic'.
 
 > **!** De opdracht wordt/werd uitgevoerd tijdens het examenmoment.
 > Reden: werkstudent
+
+## 5 - Refactoring
+
+### Bronnen
+* [Strategy pattern](https://refactoring.guru/design-patterns/strategy)
+* [Factory pattern](https://refactoring.guru/design-patterns/factory-method)
+
