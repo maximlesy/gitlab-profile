@@ -100,8 +100,21 @@ Ik liep wél vast op het kunnen compileren van de laatste stap, daar kreeg ik er
 
 ## 4 - Design Patterns
 
-### Strategy & Factory pattern
-Voor de opdracht 'Refactoring' werd het het Strategy pattern & het factory pattern toegepast. Zie daarvoor ook de uitwerking van de Gilded Rose.
+### Strategy & Factory pattern (toegepast in Gilded Rose)
+*Voor de opdracht 'Refactoring' werd het het Strategy pattern & het factory pattern toegepast. Zie daarvoor ook de uitwerking van de Gilded Rose.
+Een van de belangrijkste redenen om design patterns toe te passen, was de noodzaak om de gecentraliseerde logica in de GildedRose-klasse te verminderen: 
+Door alle logica in één klasse te centraliseren, werd de code niet alleen onoverzichtelijk, maar ook moeilijk uitbreidbaar.
+De applicatie schendt (o.a.) het Open/Closed Principle, een van de SOLID-principes, die stelt dat een software-entiteit open moet zijn voor uitbreiding, maar gesloten voor modificatie.*
+
+Om deze problemen aan te pakken, besloot ik het Strategy Pattern te gebruiken omdat dit pattern het mogelijk maakt om de **update-logica's voor verschillende itemtypes te scheiden in aparte strategieklassen**. 
+Hierdoor werd de **code flexibeler en gemakkelijker te onderhouden**. Elke strategieklasse implementeerde de specifieke update-logica voor een bepaald itemtype, wat zorgde voor een **duidelijke scheiding van verantwoordelijkheden**.
+
+Daarnaast heb ik het Factory Pattern geïmplementeerd om de creatie van de juiste strategieën te beheren. 
+Dit patroon zorgde ervoor dat de logica voor het **aanmaken van strategieën gescheiden bleef van de hoofdlogica**, wat de codebase verder vereenvoudigde. 
+De factory creëert de juiste strategie op basis van het type item, waardoor de GildedRose-klasse niet langer verantwoordelijk was voor het kennen van de specifieke update-logica van elk itemtype.
+
+Door abstracte klassen en methoden te gebruiken, kon ik ervoor zorgen dat elke concrete strategie zijn eigen implementatie van de update-logica had, maar dat met een gedeelde basis.
+Dit zorgde voor een consistente structuur en maakte het gemakkelijker om nieuwe strategieën toe te voegen zonder de bestaande code te wijzigen.
 
 ### Bronnen
 * [Strategy pattern](https://refactoring.guru/design-patterns/strategy)
