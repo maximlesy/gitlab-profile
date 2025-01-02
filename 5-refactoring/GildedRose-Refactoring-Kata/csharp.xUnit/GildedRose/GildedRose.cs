@@ -27,25 +27,18 @@ public class GildedRose
         itemUpdater.UpdateItem(item);
 
 
-        if (item.SellIn < 0)
+        if (item.SellIn < 0 && item.Name != "Aged Brie")
         {
-            if (item.Name == "Aged Brie")
-            {
-                IncreaseQuality(item);
-            }
-            else
-            {
-                DecreaseQuality(item);
-            }
+            DecreaseQuality(item);
         }
 
-        if (item.Name == "Aged Brie" || item.Name == "Backstage passes to a TAFKAL80ETC concert")
+        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
         {
             IncreaseQuality(item);
         }
         else
         {
-            if (item.Name != "Sulfuras, Hand of Ragnaros")
+            if (item.Name != "Sulfuras, Hand of Ragnaros" && item.Name != "Aged Brie")
             {
                 DecreaseQuality(item);
             }
