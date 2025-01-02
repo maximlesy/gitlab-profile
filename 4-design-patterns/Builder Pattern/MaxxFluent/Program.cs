@@ -8,7 +8,11 @@ namespace MaxxFluent
     {
         static void Main(string[] args)
         {
+            CreateCompletelyConfiguredApparment();
+        }
 
+        private static void CreateCompletelyConfiguredApparment()
+        {
             var appartment = AppartmentBuilder
                 .CreateAppartment()
                 .ConfigureFloors(configuration =>
@@ -19,6 +23,11 @@ namespace MaxxFluent
                 .HasParkingLot(true)
                 .WithCapacity(5);
 
+            DisplayAppartment(appartment);
+        }
+
+        private static void DisplayAppartment(Appartment appartment)
+        {
             for (int i = 0; i < appartment.Floors.Count; i++)
             {
                 Floor floor = appartment.Floors[i];
