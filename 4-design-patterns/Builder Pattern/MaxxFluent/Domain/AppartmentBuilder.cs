@@ -17,7 +17,7 @@ namespace MaxxFluent.Domain
         {
             floors = new List<Floor>();
             hasParkingLot = false;
-            parkingLotCapacity = 0;
+            parkingLotCapacity = 10;
         }
 
         public static IFloorsStage CreateAppartment()

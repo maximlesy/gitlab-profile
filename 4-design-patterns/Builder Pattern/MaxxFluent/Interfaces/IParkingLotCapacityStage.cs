@@ -10,5 +10,6 @@ namespace MaxxFluent.Interfaces
     public interface IParkingLotCapacityStage
     {
         Appartment WithCapacity(int capacity);
+        Appartment Build();
     }
 }

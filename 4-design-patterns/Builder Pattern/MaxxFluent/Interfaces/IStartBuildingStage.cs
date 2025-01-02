@@ -10,5 +10,6 @@ namespace MaxxFluent.Interfaces
     public interface IStartBuildingStage
     {
         IFloorsStage StartBuild();
+        // no Appartment Build(); here because we MUST start with floors
     }
 }
