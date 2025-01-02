@@ -13,15 +13,16 @@ public class GildedRose
 
     public void UpdateQuality()
     {
-        for (var i = 0; i < Items.Count; i++)
+        foreach (var item in Items)
         {
-            DecreaseSellIn(Items[i]);
-            HandleQualityLogic(Items[i]);
+            HandleQualityLogic(item);
         }
     }
 
     private void HandleQualityLogic(Item item)
     {
+        DecreaseSellIn(item);
+
         if (item.Name == "Sulfuras, Hand of Ragnaros") return;
 
         if (item.SellIn < 0)
