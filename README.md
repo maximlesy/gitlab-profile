@@ -126,6 +126,18 @@ wat de code leesbaarder en onderhoudbaarder maakt. Het helpt ook om immutability
 Bovendien kan je, wanneer je verder werkt met de Fluent manier van schrijven, als developer concrete stappen bepalen waarin een object aangemaakt mag/moet worden door het definieëren van de verschillen de stappen
 om het complexere object aan te maken (deze stappen zijn de `IStages` in de code).
 
+#### Dependency Injection Pattern
+* Containers zijn complex omdat ze kennis moeten hebben van ALLE dependencies
+
+* Mogelijke strategieën berusten op verschillende stijlen van registreren en dus ook van types bij te houden. In mijn uitwerking kan je bijvoorbeeld geen concrete types registeren en moeten ze altijd berusten 
+op een interface. Concrete types extra voorzien zorgt voor extra werk en complexiteit.
+
+* Een container is vrij "low level": je stapt volledig af van concrete types en grijpt in C# terug naar basis types (Type en object) en moet aan 'reflection' doen.
+
+* Eenmaal de container geschreven is, is het echter heel eenvoudig om een object aan te maken die heel veel dependencies heeft, zelfs als de dependency chain heel diep is. 
+Voordeel is dat je de dependency chain zelf niet meer moet opbouwen. Bovendien is het ook zo dat je de applicatie zijn manier van werken heel eenvoudig kan wijzigen door een dependency anders te registreren. 
+Daardoor kan het gedrag van de applicatie plots helemaal wijzigen met maar één lijn code aan te moeten passen.
+
 ### Bronnen
 * [Strategy pattern](https://refactoring.guru/design-patterns/strategy)
 * [Factory pattern](https://refactoring.guru/design-patterns/factory-method)
