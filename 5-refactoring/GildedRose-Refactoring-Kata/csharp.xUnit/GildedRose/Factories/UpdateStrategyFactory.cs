@@ -1,10 +1,5 @@
 ﻿using GildedRoseKata.Strategies;
 using GildedRoseKata.Strategies.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GildedRoseKata.Factories
 {
@@ -15,7 +10,7 @@ namespace GildedRoseKata.Factories
             return itemName switch
             {
                 "Sulfuras, Hand of Ragnaros" => new SulfurasUpdateStrategy(),
-                _ => null,
+                _ => new DefaultUpdateStrategy(),
             };
         }
     }
