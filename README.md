@@ -143,6 +143,8 @@ Daardoor kan het gedrag van de applicatie plots helemaal wijzigen met maar één
 * [Factory pattern](https://refactoring.guru/design-patterns/factory-method)
 * [Builder pattern](https://refactoring.guru/design-patterns/builder)
 * [Fluent API](https://www.youtube.com/watch?v=1JAdZul-aRQ&t=588s)
+* [Dependency Injection Design pattern I](https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/hh323705(v=vs.100)?redirectedfrom=MSDN)
+* [Dependency Injection Design pattern II](https://dotnettutorials.net/lesson/dependency-injection-design-pattern-csharp/)
 
 ## 5 - Refactoring
 
