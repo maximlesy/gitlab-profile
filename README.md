@@ -148,4 +148,38 @@ Daardoor kan het gedrag van de applicatie plots helemaal wijzigen met maar één
 
 ## 5 - Refactoring
 
+### Gilded Rose
 
+> **!** De commits die betrekking hebben op de Gilded Rose oefening werden gelabeled met "Gilded Rose - Step x - Commit message xxx"
+
+Mijn strategie om de Gilded Rose te refactoren was om éérst (Acceptance) Tests te schrijven die de bestaande codebase testten.
+Op die manier kon ik bevestigen dat de applicatie (1) inderdaad functioneert zoals beloofd en (2) dat mijn eigen tests de boundaries van het project testen.
+Ter info: dit zijn de commits met "Gilded Rose - Aceptance test - message xxx"
+
+Eenmaal de applicatie tests bevatte die alle requirements aftoetsten, kon ik starten met het eigenlijke refactoren. Deze commits herken je aan "Gilded Rose - Refactor - message xxx"
+De eerste stap was daarbij om op zoek te gaan naar **code duplicatie in een eigen methode onder te brengen**. Vervolgens zocht ik naar nutteloze if-statements, condition checks om **onnodige nesting te verwijderen**.
+Verder keerde ik veel condities om om de leesbaarheid te verhogen: bv.: `item.Name != "Aged Brie"` werd vertaald naar `item.Name == Aged Brie` omdat ik van mening men dat deze **wijzing de intentie van de code expliciteert**.
+
+Daarna ging ik verder met het maken van een unieke methode `HandleQualityLogic`, die bedoeld was om **eerst op een gestructureerde manier de logica van de verschillende items te kunnen structuren**.
+Ik koos om dit te doen om stapsgewijs verder te kunnen (op zich had ik integraal op delete kunnen drukken en de applicatie herschreven hebben), maar ik wou wijziging per wijziging kunnen aantonen dat de code bleef werken
+tijdens het refactoren. De `HandleQualityLogic` bewijst dat.
+
+Het **verwijderen van onlogische stappen en deze herformuleren** naar de `HandleQualityLogic` ging een stukje verder. In feite werd deze methode een soort van switch statement waarin de regelset van de items ondergebracht werd.
+Echter, doordat de oorspronkelijke code zeer quirky geschreven was zaten er heel wat bizarre logica's verstopt in de code base, inclusief het uiteindelijk bevatten van recursieve functies.
+De volgende stap was dan ook om de **recursieve functies (die ikzelf gaandeweg introduceerde) te verwijderen** om de code weer expliet te maken.
+Op dit punt besloot ik om ervoor te kiezen om alle logica af te handelen in één methode: deze stap verwezenlijkt de letterlijke verschuiving van de spaghetti-code als start: naar gestructureerde(re) code in mijn eigen methode.
+
+Met gestructureerde code in mijn nieuwe methode, kon ik **verder gaan met het refactoren door nieuwe klasses e.d. te introduceren** die elk stuk logica apart moeten afhankelen om **Seperation of Concerns** in de hand te werken.
+Hiervoor werd het **Strategy en het Factory pattern** toegepast. Hierbij werd ook gedacht aan gedeelde logica die onderbracht werd (abstracte) basisklasses, e.d.
+
+**Pas nu de oorspronkelijke code van het project helemaal gerefactored, voegde ik de nieuwe case voor Conjured items toe.** 
+Daarvoor voegde ik eerst een 'red' test toe (cfr. TDD) om te bevestigen dat het Conjured item effectief niet functioneert.
+
+Gezien de code op dit punt helemaal mooi opgeplitst is met specifieke 'UpdateStrategies', is het enkel een kwestie van een nieuwe `ConjuredItemUpdateStrategy` toe te voegen met zijn eigen logica. Deze stap was dan ook het minste werk.
+Een concrete implementatie is niet slechts enkele minuten werk en mijn test kan bevestigen dat de code functioneert zoals gewenst, want ze kleurt mooi 'green'.
+
+De applicatie is helemaal gerefactored met een aanpak die ik best kan smaken.
+
+#### Bronnen
+* [Strategy pattern](https://refactoring.guru/design-patterns/strategy)
+* [Factory pattern](https://refactoring.guru/design-patterns/factory-method)
