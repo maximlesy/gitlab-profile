@@ -116,9 +116,21 @@ De factory creëert de juiste strategie op basis van het type item, waardoor de 
 Door abstracte klassen en methoden te gebruiken, kon ik ervoor zorgen dat elke concrete strategie zijn eigen implementatie van de update-logica had, maar dat met een gedeelde basis.
 Dit zorgde voor een consistente structuur en maakte het gemakkelijker om nieuwe strategieën toe te voegen zonder de bestaande code te wijzigen.
 
+### Builder Pattern (met Fluent API)
+Het idee van "Fleunt" code schrijven (lees: method chaining toepassen om objecten aan te maken en/of configureren) is iets wat is heel wat .NET applicaties een standaard practise is omdat het op deze manier in de 
+default tools van .NET wordt voorzien.
+
+Ik schreef dan ook een project die het .NET gedrag simuleert, waar wezenlijk neerkomt op het toepassen van het Builder Pattern.
+Wat ik voornamelijk opstak uit het toepassen van het Builder Pattern is dat wordt gebruikt om complexe objecten stap voor stap te creëren, 
+wat de code leesbaarder en onderhoudbaarder maakt. Het helpt ook om immutability te waarborgen en voorkomt constructor telescoping.
+Bovendien kan je, wanneer je verder werkt met de Fluent manier van schrijven, als developer concrete stappen bepalen waarin een object aangemaakt mag/moet worden door het definieëren van de verschillen de stappen
+om het complexere object aan te maken (deze stappen zijn de `IStages` in de code).
+
 ### Bronnen
 * [Strategy pattern](https://refactoring.guru/design-patterns/strategy)
 * [Factory pattern](https://refactoring.guru/design-patterns/factory-method)
+* [Builder pattern](https://refactoring.guru/design-patterns/builder)
+* [Fluent API](https://www.youtube.com/watch?v=1JAdZul-aRQ&t=588s)
 
 ## 5 - Refactoring
 
