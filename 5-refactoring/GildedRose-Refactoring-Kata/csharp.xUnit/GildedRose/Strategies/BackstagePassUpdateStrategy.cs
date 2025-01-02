@@ -13,6 +13,23 @@ namespace GildedRoseKata.Strategies
         public void Update(Item item)
         {
             base.DecreaseSellIn(item);
+
+            IncreaseQuality(item);
+
+            if (item.SellIn < 10)
+            {
+                IncreaseQuality(item);
+            }
+
+            if (item.SellIn < 5)
+            {
+                IncreaseQuality(item);
+            }
+
+            if (item.SellIn < 0)
+            {
+                item.Quality = 0;
+            }
         }
     }
 }

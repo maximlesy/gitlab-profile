@@ -25,42 +25,6 @@ public class GildedRose
     private void HandleQualityLogic(Item item)
     {
         itemUpdater.UpdateItem(item);
-
-
-        if (item.SellIn < 0 && item.Name != "Aged Brie")
-        {
-            DecreaseQuality(item);
-        }
-
-        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-        {
-            IncreaseQuality(item);
-        }
-        else
-        {
-            if (item.Name != "Sulfuras, Hand of Ragnaros" && item.Name != "Aged Brie")
-            {
-                DecreaseQuality(item);
-            }
-        }
-
-        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-        {
-            if (item.SellIn < 10)
-            {
-                IncreaseQuality(item);
-            }
-
-            if (item.SellIn < 5)
-            {
-                IncreaseQuality(item);
-            }
-
-            if (item.SellIn < 0)
-            {
-                item.Quality = 0;
-            }
-        }
     }
 
     private void IncreaseQuality(Item item)

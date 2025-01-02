@@ -1,4 +1,6 @@
-﻿namespace GildedRoseKata.Strategies.Shared
+﻿using System;
+
+namespace GildedRoseKata.Strategies.Shared
 {
     public abstract class UpdateStrategy
     {
@@ -21,8 +23,16 @@
             {
                 item.Quality--;
             }
+
+            DecreaseQualityExtraIfSellInHasPassed(item);
         }
 
-
+        private void DecreaseQualityExtraIfSellInHasPassed(Item item)
+        {
+            if (item.SellIn < 0 && item.Quality > 0)
+            {
+                item.Quality--;
+            }
+        }
     }
 }
