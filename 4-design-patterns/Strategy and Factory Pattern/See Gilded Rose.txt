@@ -1,0 +1,3 @@
+This pattern was applied in the 'Gilded Rose' code.
+
+See `5-refactoring > Gilded Rose`.
